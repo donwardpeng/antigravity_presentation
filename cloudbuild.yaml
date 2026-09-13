@@ -1,0 +1,38 @@
+# Google Cloud Build pipeline to build container image and deploy to Cloud Run
+steps:
+  # Step 1: Build Docker Container Image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/gdg-presentation:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/gdg-presentation:latest'
+      - '.'
+
+  # Step 2: Push Container Image to Container Registry / Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/gdg-presentation:$COMMIT_SHA'
+
+  # Step 3: Deploy Service to Google Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'gdg-presentation'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/gdg-presentation:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+
+images:
+  - 'gcr.io/$PROJECT_ID/gdg-presentation:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/gdg-presentation:latest'

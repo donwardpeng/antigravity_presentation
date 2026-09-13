@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDG on Campus University of Windsor - Antigravity: Harnessing the Power</title>
+  
+  <!-- Google Fonts: Google Sans / Roboto / Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Google+Sans:wght@400;500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Marked.js for rendering markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-docker.min.js"></script>
+
+  <!-- Application CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="gdg-theme dark-mode">
+
+  <!-- Top GDG Header Bar -->
+  <header class="gdg-header">
+    <div class="gdg-brand">
+      <div class="gdg-dots">
+        <span class="dot blue"></span>
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <span class="gdg-title">GDG on Campus University of Windsor</span>
+      <span class="gdg-divider">/</span>
+      <span class="gdg-sub">Antigravity: Harnessing the Power</span>
+    </div>
+    
+    <div class="gdg-header-right">
+      <span id="slideBadge" class="gdg-badge">PRESENTATION</span>
+      <button id="themeToggleBtn" class="icon-btn" title="Toggle Dark/Light Mode">
+        <svg id="themeIcon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-5.4-5.4c0-1.81.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Presentation Container -->
+  <main id="presentationApp" class="presentation-stage">
+    <!-- Slide Viewport -->
+    <div id="slideViewport" class="slide-viewport">
+      <div id="activeSlide" class="slide-card">
+        <div class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Loading GDG Cloud Presentation...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Docked Presentation Control Toolbar -->
+  <nav class="docked-toolbar">
+    <div class="toolbar-section left">
+      <button id="drawerToggleBtn" class="tool-btn" title="Slide Overview (Key: M)">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        <span>Slides</span>
+      </button>
+      <button id="notesToggleBtn" class="tool-btn" title="Speaker Notes & Timer (Key: S)">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        <span>Notes</span>
+      </button>
+    </div>
+
+    <div class="toolbar-section center">
+      <button id="prevBtn" class="tool-btn nav-btn" title="Previous Slide (Left Arrow / Backspace)">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <div class="slide-counter-container">
+        <span id="currentSlideIndex">1</span>
+        <span class="counter-slash">/</span>
+        <span id="totalSlidesCount">1</span>
+      </div>
+      <button id="nextBtn" class="tool-btn nav-btn" title="Next Slide (Right Arrow / Space)">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+
+    <div class="toolbar-section right">
+      <button id="fullscreenBtn" class="tool-btn" title="Toggle Fullscreen (Key: F)">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+        <span>Fullscreen</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Slide Drawer / Picker Overlay -->
+  <div id="slideDrawer" class="slide-drawer-overlay">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3>Presentation Slides Overview</h3>
+        <button id="closeDrawerBtn" class="close-btn">&times;</button>
+      </div>
+      <div id="drawerList" class="drawer-list">
+        <!-- Dynamically rendered slide thumbnails/list -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Speaker Notes Modal / Pop-out View -->
+  <div id="notesModal" class="notes-modal-overlay">
+    <div class="notes-modal-card">
+      <div class="notes-header">
+        <div class="notes-title">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          <span>Speaker Console</span>
+        </div>
+        
+        <!-- Live Speaker Presentation Timer -->
+        <div class="speaker-timer">
+          <span class="timer-label">ELAPSED:</span>
+          <span id="timerDisplay" class="timer-digits">00:00:00</span>
+          <button id="toggleTimerBtn" class="timer-btn">Pause</button>
+          <button id="resetTimerBtn" class="timer-btn">Reset</button>
+        </div>
+
+        <button id="closeNotesBtn" class="close-btn">&times;</button>
+      </div>
+
+      <div class="notes-body">
+        <div class="notes-panel current">
+          <h4 class="panel-subtitle">Current Slide Notes (<span id="notesSlideTitle"></span>)</h4>
+          <div id="speakerNotesText" class="notes-content">
+            <!-- Speaker notes content rendered here -->
+          </div>
+        </div>
+
+        <div class="notes-panel preview">
+          <h4 class="panel-subtitle">Upcoming Slide Preview</h4>
+          <div id="upcomingSlidePreview" class="upcoming-preview-box">
+            <!-- Preview of next slide -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="/js/app.js" type="module"></script>
+</body>
+</html>
