@@ -22,14 +22,14 @@ notes: Introduce tonight's speakers from GDG on Campus University of Windsor. Gi
   {
     "name": "Don Ward",
     "title": "Customer Engineer",
-    "headshot": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "headshot": "/images/don-ward.jpg",
     "company": "Google Cloud",
     "topic": ""
   },
   {
-    "name": "Byran Kelly",
+    "name": "Bryan Kelly",
     "title": "Forward Deployed Engineer",
-    "headshot": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "headshot": "/images/bryan-kelly.jpg",
     "company": "Google Cloud",
     "topic": ""
   }
