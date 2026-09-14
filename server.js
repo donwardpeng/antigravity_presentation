@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import fs from 'node:fs';
 import { parseSlides } from './lib/parser.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -57,6 +58,82 @@ app.get('/api/slides', (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+// Active Server-Sent Events (SSE) clients for live reload
+const liveReloadClients = new Set();
+
+app.get('/api/live-reload', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no'); // Disable proxy buffering (Nginx/Cloud Run)
+  if (res.flushHeaders) res.flushHeaders();
+
+  // Send initial connection packet
+  res.write('data: {"type":"connected"}\n\n');
+  liveReloadClients.add(res);
+
+  // Heartbeat ping every 25 seconds
+  const heartbeatTimer = setInterval(() => {
+    try {
+      res.write(': heartbeat\n\n');
+    } catch {
+      clearInterval(heartbeatTimer);
+      liveReloadClients.delete(res);
+    }
+  }, 25000);
+
+  req.on('close', () => {
+    clearInterval(heartbeatTimer);
+    liveReloadClients.delete(res);
+  });
+});
+
+/**
+ * Broadcast an event to all connected live-reload browser clients
+ */
+function broadcastLiveEvent(event) {
+  const payload = `data: ${JSON.stringify(event)}\n\n`;
+  for (const client of liveReloadClients) {
+    try {
+      client.write(payload);
+    } catch {
+      liveReloadClients.delete(client);
+    }
+  }
+}
+
+// Watch slides.md for live in-place slide content updates
+const slidesFilePath = path.join(__dirname, 'slides.md');
+let slidesDebounceTimer = null;
+try {
+  fs.watch(slidesFilePath, (eventType) => {
+    clearTimeout(slidesDebounceTimer);
+    slidesDebounceTimer = setTimeout(() => {
+      console.log('⚡ [Live Reload] slides.md updated -> broadcasting in-place update');
+      broadcastLiveEvent({ type: 'slides-updated', timestamp: Date.now() });
+    }, 150);
+  });
+  console.log('👀 Watching slides.md for live updates');
+} catch (err) {
+  console.warn('⚠️ Could not attach file watcher to slides.md:', err.message);
+}
+
+// Watch public/ directory for frontend asset updates (CSS, JS, images, index.html)
+const publicDirPath = path.join(__dirname, 'public');
+let publicDebounceTimer = null;
+try {
+  fs.watch(publicDirPath, { recursive: true }, (eventType, filename) => {
+    clearTimeout(publicDebounceTimer);
+    publicDebounceTimer = setTimeout(() => {
+      console.log(`⚡ [Live Reload] public asset changed (${filename}) -> broadcasting page reload`);
+      broadcastLiveEvent({ type: 'page-reload', filename, timestamp: Date.now() });
+    }, 200);
+  });
+  console.log('👀 Watching public/ directory for live updates');
+} catch (err) {
+  console.warn('⚠️ Could not attach file watcher to public/ directory:', err.message);
+}
 
 // Serve static frontend assets
 app.use(express.static(path.join(__dirname, 'public')));

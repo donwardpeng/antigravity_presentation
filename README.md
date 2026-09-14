@@ -7,7 +7,8 @@ A containerized, interactive presentation web platform designed for GDG on Campu
 ## 🌟 Key Features
 
 - **🎨 GDG Material Design Theme**: Clean aesthetic featuring Google core colors (`#4285F4`, `#EA4335`, `#FBBC04`, `#34A853`), Google Sans typography, card-based layout, and dark/light modes.
-- **📄 Markdown Slide Engine (`slides.md`)**: Slide parser separating content by `---` blocks with frontmatter support for titles, badges, speaker notes, and slide layout types (`standard`, `interactive-cli`, `interactive-demo`).
+- **📄 Markdown Slide Engine (`slides.md`)**: Slide parser separating content by `---` blocks with frontmatter support for titles, badges, speaker notes, and slide layout types (`standard`, `introduction`, `interactive-cli`, `interactive-demo`).
+- **👥 Introduction & Speaker Spots Slide**: Dedicated `introduction` slide type rendering interactive speaker profile cards with avatar headshots (or fallback Google-colored initial avatars), speaker titles, company/affiliations, and topic badges.
 - **⌨️ Complete Keyboard Shortcuts**:
   - `→` / `Space` / `PageDown`: Next slide
   - `←` / `Backspace` / `PageUp`: Previous slide
@@ -35,6 +36,33 @@ To test HTTP Basic Auth locally:
 ```bash
 AUTH_USER=gdg AUTH_PASS=cloud2026 npm start
 ```
+
+### 3. Adding an Introduction / Speaker Slide
+Set `type: introduction` in `slides.md` and define speakers with `name`, `title`, `headshot` (URL or local path), and optional `company` and `topic`:
+
+````markdown
+---
+type: introduction
+title: Meet the Speakers
+badge: FEATURED SPEAKERS
+notes: Welcome our keynote speakers!
+
+# Meet the Speakers
+### GDG on Campus University of Windsor
+
+```speakers
+[
+  {
+    "name": "Don Ward",
+    "title": "Lead Organizer & Cloud Developer",
+    "headshot": "https://example.com/don.jpg",
+    "company": "University of Windsor",
+    "topic": "Google Cloud Run"
+  }
+]
+```
+````
+If `headshot` is omitted or unavailable, a Google-themed avatar with the speaker's initials will render automatically.
 
 ---
 

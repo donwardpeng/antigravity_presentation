@@ -55,6 +55,16 @@ async function initApp() {
     if (data.success && data.slides && data.slides.length > 0) {
       slides = data.slides;
       totalSlidesCountEl.textContent = slides.length;
+
+      // Check if URL hash specifies a slide (e.g., #slide-3 or #3)
+      const hashMatch = window.location.hash.match(/#?(?:slide-)?(\d+)/i);
+      if (hashMatch) {
+        const targetIndex = parseInt(hashMatch[1], 10) - 1;
+        if (targetIndex >= 0 && targetIndex < slides.length) {
+          currentIndex = targetIndex;
+        }
+      }
+
       renderDrawerList();
       renderSlide(currentIndex);
       startSpeakerTimer();
@@ -67,6 +77,7 @@ async function initApp() {
   }
 
   setupEventListeners();
+  setupLiveReload();
 }
 
 /**
@@ -78,15 +89,63 @@ function renderSlide(index) {
   currentIndex = index;
   const slide = slides[currentIndex];
 
+  // Synchronize URL hash with current slide
+  try {
+    history.replaceState(null, '', `#slide-${currentIndex + 1}`);
+  } catch (e) {
+    // Ignore iframe / sandbox restrictions
+  }
+
   currentSlideIndexEl.textContent = currentIndex + 1;
   slideBadge.textContent = slide.badge || 'PRESENTATION';
 
   // Render markdown content using Marked.js
   let htmlContent = marked.parse(slide.content);
 
+  // Prepend logo if configured on slide
+  if (slide.logo && !htmlContent.includes('hero-logo-container')) {
+    const logoSrc = (slide.logo === 'antigravity' || slide.logo === 'true') 
+      ? '/images/antigravity-logo.png' 
+      : slide.logo;
+    htmlContent = `
+      <div class="hero-logo-container">
+        <div class="hero-logo-halo"></div>
+        <img src="${escapeHTML(logoSrc)}" alt="Antigravity Logo" class="hero-antigravity-logo floating-logo" />
+      </div>
+    ` + htmlContent;
+  }
+
+  // If introduction slide, append speaker spots grid
+  if (['introduction', 'speakers', 'speaker-intro'].includes(slide.type)) {
+    if (!htmlContent.includes('<h1')) {
+      htmlContent = `<h1 class="intro-slide-title">${escapeHTML(slide.title)}</h1>` + htmlContent;
+    }
+    htmlContent += createIntroductionSlideHTML(slide);
+  }
+
   // If interactive CLI slide, append CLI terminal widget
   if (slide.type === 'interactive-cli') {
     htmlContent += createCLITerminalHTML();
+  }
+
+  // Append slide footer if present
+  if (slide.footer) {
+    htmlContent += `
+      <footer class="slide-footer">
+        <div class="slide-footer-brand">
+          <div class="gdg-dots-mini">
+            <span class="dot blue"></span>
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="slide-footer-text">${escapeHTML(slide.footer)}</span>
+        </div>
+        <div class="slide-footer-meta">
+          <span>GDG on Campus</span>
+        </div>
+      </footer>
+    `;
   }
 
   activeSlide.innerHTML = htmlContent;
@@ -517,6 +576,207 @@ function setupEventListeners() {
         break;
     }
   });
+
+  // Respond to browser forward/back or manual hash changes
+  window.addEventListener('hashchange', () => {
+    const hashMatch = window.location.hash.match(/#?(?:slide-)?(\d+)/i);
+    if (hashMatch) {
+      const targetIndex = parseInt(hashMatch[1], 10) - 1;
+      if (targetIndex >= 0 && targetIndex < slides.length && targetIndex !== currentIndex) {
+        renderSlide(targetIndex);
+      }
+    }
+  });
+}
+
+/**
+ * Generate HTML string for Introduction / Speaker spots
+ */
+function createIntroductionSlideHTML(slide) {
+  const speakers = slide.speakers || [];
+  if (speakers.length === 0) return '';
+
+  const accentColors = ['blue', 'red', 'yellow', 'green'];
+
+  const cardsHTML = speakers.map((speaker, index) => {
+    const accent = accentColors[index % accentColors.length];
+    const initials = getInitials(speaker.name || 'Speaker');
+    const isPlaceholder = !speaker.name || speaker.name === 'Speaker Name' || speaker.name.includes('Add Speaker');
+
+    const headshotHTML = (speaker.headshot && speaker.headshot.trim() !== '')
+      ? `
+        <img 
+          src="${escapeHTML(speaker.headshot)}" 
+          alt="${escapeHTML(speaker.name || 'Speaker')}" 
+          class="speaker-avatar-img"
+          loading="lazy"
+          onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+        />
+        <div class="speaker-avatar-initials accent-${accent}" style="display:none;">${initials}</div>
+      `
+      : `<div class="speaker-avatar-initials accent-${accent}">${initials}</div>`;
+
+    return `
+      <div class="speaker-card ${isPlaceholder ? 'speaker-placeholder-card' : ''} accent-border-${accent}">
+        <div class="speaker-avatar-frame ring-${accent}">
+          <div class="speaker-avatar-inner">
+            ${headshotHTML}
+          </div>
+          <div class="speaker-accent-glow glow-${accent}"></div>
+        </div>
+        
+        <div class="speaker-info">
+          <h3 class="speaker-name">${escapeHTML(speaker.name || 'Speaker Name')}</h3>
+          
+          <div class="speaker-title-badge badge-${accent}">
+            <svg viewBox="0 0 24 24" width="13" height="13" class="speaker-badge-icon">
+              <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <span>${escapeHTML(speaker.title || 'Featured Speaker')}</span>
+          </div>
+
+          ${speaker.company ? `
+            <div class="speaker-affiliation">
+              <svg viewBox="0 0 24 24" width="13" height="13" class="affiliation-icon">
+                <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>${escapeHTML(speaker.company)}</span>
+            </div>
+          ` : ''}
+
+          ${speaker.topic ? `
+            <div class="speaker-topic-box">
+              <span class="topic-tag">TOPIC</span>
+              <span class="topic-desc">${escapeHTML(speaker.topic)}</span>
+            </div>
+          ` : ''}
+
+          ${speaker.bio ? `
+            <p class="speaker-bio">${escapeHTML(speaker.bio)}</p>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="intro-speakers-section">
+      <div class="speakers-grid speakers-count-${Math.min(speakers.length, 4)}">
+        ${cardsHTML}
+      </div>
+    </div>
+  `;
+}
+
+function getInitials(name) {
+  if (!name) return 'GDG';
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return 'GDG';
+  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function escapeHTML(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+/**
+ * Setup Live Reload (SSE) connection to dev server
+ */
+function setupLiveReload() {
+  if (!window.EventSource) return;
+
+  const liveBadge = document.getElementById('liveStatusBadge');
+  const es = new EventSource('/api/live-reload');
+
+  es.onopen = () => {
+    console.log('⚡ Live Reload connected to dev server');
+    if (liveBadge) {
+      liveBadge.classList.remove('disconnected');
+      liveBadge.title = 'Live Dev Mode active: edits update automatically without refreshing';
+    }
+  };
+
+  es.onmessage = async (event) => {
+    try {
+      const payload = JSON.parse(event.data);
+      if (payload.type === 'slides-updated') {
+        console.log('⚡ [Live Reload] slides.md updated -> reloading slides in-place...');
+        await reloadSlidesInPlace();
+      } else if (payload.type === 'page-reload') {
+        console.log('⚡ [Live Reload] Frontend asset changed -> reloading page...');
+        showToast('Refreshing styles & assets...');
+        setTimeout(() => {
+          window.location.reload();
+        }, 200);
+      }
+    } catch (err) {
+      // Ignore heartbeat or non-JSON comments
+    }
+  };
+
+  es.onerror = () => {
+    if (liveBadge) {
+      liveBadge.classList.add('disconnected');
+      liveBadge.title = 'Reconnecting to dev server...';
+    }
+  };
+}
+
+/**
+ * Reload slides from backend without refreshing page
+ * Preserves current slide index, drawer state, and presentation timer
+ */
+async function reloadSlidesInPlace() {
+  try {
+    const res = await fetch(`/api/slides?_t=${Date.now()}`);
+    const data = await res.json();
+    if (data.success && data.slides && data.slides.length > 0) {
+      slides = data.slides;
+      totalSlidesCountEl.textContent = slides.length;
+
+      // Keep currentIndex within valid bounds if slide count changed
+      if (currentIndex >= slides.length) {
+        currentIndex = slides.length - 1;
+      }
+
+      renderDrawerList();
+      renderSlide(currentIndex);
+      showToast('⚡ Slide content updated live');
+    }
+  } catch (err) {
+    console.warn('Failed to hot-update slides:', err);
+  }
+}
+
+/**
+ * Show a sleek floating toast notification
+ */
+let toastHideTimeout = null;
+function showToast(message) {
+  let toast = document.getElementById('liveReloadToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'liveReloadToast';
+    toast.className = 'live-reload-toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `
+    <span class="toast-dot"></span>
+    <span class="toast-text">${escapeHTML(message)}</span>
+  `;
+  toast.classList.add('show');
+
+  clearTimeout(toastHideTimeout);
+  toastHideTimeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2200);
 }
 
 // Launch application on DOM Ready

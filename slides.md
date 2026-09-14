@@ -1,101 +1,584 @@
 type: standard
-title: Cloud Native Apps with Google Cloud Run
+title: Antigravity: Harnessing the Power
 badge: GDG TECH TALK
-notes: Welcome everyone to today's GDG Tech Talk! Introduce Google Cloud Run and how serverless containers simplify modern app deployment. Explain slide navigation: Arrow keys to move, 'S' for speaker view, 'F' for fullscreen.
+logo: /images/antigravity-logo.png
+footer: Brought to you by GDG on Campus University of Windsor
+notes: Welcome everyone to today's GDG Tech Talk! Introducing Antigravity - Google's Agentic Harness for developers. Explain slide navigation: Arrow keys to move, 'S' for speaker view, 'F' for fullscreen.
 
-# Cloud Native Apps with Google Cloud Run
-### Building Modular, Scalable Microservices for the Modern Web
-
-- **Presenter**: GDG on Campus University of Windsor
-- **Target Platform**: Google Cloud Run & Cloud Build
-- **Tech Stack**: Node.js, Containerization, Modern Web APIs
+# Antigravity: Harnessing the Power
+## A hands-on approach
 
 ---
+type: introduction
+title: Meet the Speakers
+badge: FEATURED SPEAKERS
+notes: Introduce tonight's speakers from GDG on Campus University of Windsor. Give a quick overview of each speaker's background and what they will be presenting today.
 
-> 💡 **Quick Navigation Tip**: Press **`→`** or **`Space`** to advance. Press **`S`** for Speaker Notes with Live Timer, **`M`** for Slide Drawer, and **`F`** for Fullscreen.
+# Meet the Speakers
+### GDG on Campus University of Windsor • Presenters
 
-```json
-{
-  "event": "GDG Cloud Meetup 2026",
-  "status": "LIVE PRESENTATION",
-  "features": ["Zero-Infrastructure Ops", "Auto-scaling to Zero", "Custom Domains", "HTTP Basic Auth"]
-}
+```speakers
+[
+  {
+    "name": "Don Ward",
+    "title": "Customer Engineer",
+    "headshot": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "company": "Google Cloud",
+    "topic": ""
+  },
+  {
+    "name": "Byran Kelly",
+    "title": "Forward Deployed Engineer",
+    "headshot": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    "company": "Google Cloud",
+    "topic": ""
+  }
+]
 ```
-
----
-type: interactive-demo
-title: Cloud Run Architecture & Scaling Matrix
-badge: INTERACTIVE ARCHITECTURE
-notes: Walk through the key architectural benefits of Cloud Run. Highlight scale-to-zero, request-based autoscaling, concurrency tuning, and container portability.
-
-# Google Cloud Run Architecture
-
-Google Cloud Run is a managed compute platform that enables running stateless containers invoked via web requests or Pub/Sub events.
-
-### Core Architectural Pillars
-- ⚡ **Scale to Zero**: Pay only when your application receives traffic.
-- 🔒 **Built-in HTTPS & TLS**: Automated SSL cert provisioning and endpoint security.
-- 🚀 **Concurrency & Micro-bursting**: Up to 1,000 requests per container instance.
-- 📦 **Open Standards**: Fully Knative compliant – run any Docker container image.
-
----
-
-### Cloud Run vs. Traditional VM Deployments
-
-| Metric | Compute Engine (VM) | GKE (Kubernetes) | Google Cloud Run |
-| :--- | :--- | :--- | :--- |
-| **Setup Overhead** | High (OS/Patching) | Medium/High (Cluster Ops) | **Zero (Container-native)** |
-| **Scaling Speed** | Minutes (Auto-scaler) | Tens of seconds | **Sub-second cold start** |
-| **Pricing Model** | Always-on hourly rate | Nodes + Management Fee | **Per-second request billing** |
-| **Portability** | Low | High (K8s API) | **100% OCI Container** |
-
----
-type: interactive-cli
-title: Live Cloud Run CLI Playground
-badge: LIVE CLI DEMO
-notes: Click 'Run Demo' to auto-simulate running gcloud commands in real-time. Explain gcloud run deploy parameters: image tag, region, platform, and auth flags. Show attendees how live CLI outputs appear.
-
-# Interactive `gcloud` Terminal Simulator
-
-Try running live commands below or click **"Run Demo"** to watch automated step-by-step container deployment to Google Cloud Run!
-
-### Command Sandbox Commands to try:
-- `help` - List supported interactive commands
-- `gcloud projects list` - View active GCP projects
-- `docker build -t gdg-app .` - Test local container image build
-- `gcloud run deploy` - Deploy presentation app live to Cloud Run
-- `clear` - Reset terminal screen
 
 ---
 type: standard
-title: Production Ready Setup & Summary
-badge: DEPLOYMENT GUIDE
-notes: Wrap up the session. Point attendees to the GitHub repository, Dockerfile multi-stage setup, and cloudbuild.yaml. Take QA questions from the audience.
+title: What is Antigravity?
+badge: AUDIENCE QUESTION 🤔
+notes: Pause here and look at the audience. Ask them: 'Before we show you the code, what do you think Google Antigravity is?' Let 2-3 people answer or guess. Highlight that almost everyone expects a chatbot or copilot autocomplete, but it's fundamentally an autonomous agentic harness.
 
-# Summary & Next Steps
+# What is Antigravity?
+### 🤔 Quick Question for the Room
 
-Deploying this modular presentation to Google Cloud Run takes 3 simple steps:
+> **Before we look under the hood, let's take a quick pulse:**  
+> When you hear "Antigravity by Google", what comes to mind?
 
-```bash
-# 1. Build & Push Image with Cloud Build
-gcloud builds submit --tag gcr.io/$PROJECT_ID/gdg-presentation
+<div class="poll-grid">
+  <div class="poll-card accent-blue">
+    <span class="poll-badge">A</span>
+    <h4>A Chatbot Interface</h4>
+    <p>A conversational web assistant like ChatGPT or Gemini chat?</p>
+  </div>
+  <div class="poll-card accent-red">
+    <span class="poll-badge">B</span>
+    <h4>An IDE Copilot</h4>
+    <p>An inline code autocomplete tool like GitHub Copilot or Tabnine?</p>
+  </div>
+  <div class="poll-card accent-yellow">
+    <span class="poll-badge">C</span>
+    <h4>A New Foundation Model</h4>
+    <p>A proprietary LLM trained specifically for coding benchmarks?</p>
+  </div>
+  <div class="poll-card accent-green">
+    <span class="poll-badge">D</span>
+    <h4>An Autonomous Agent Harness</h4>
+    <p>A runtime environment that gives AI hands, tools, terminals, and pair-programming autonomy?</p>
+  </div>
+</div>
 
-# 2. Deploy to Cloud Run with Environment Configuration
-gcloud run deploy gdg-presentation \
-  --image gcr.io/$PROJECT_ID/gdg-presentation \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --set-env-vars AUTH_USER=gdg,AUTH_PASS=cloud2026
-
-# 3. Access your secure, auto-scaling live presentation URL!
-```
+<div class="poll-reveal-box">
+  💡 <strong>Spoiler Alert</strong>: It's <strong>D</strong> — a next-generation agentic harness designed by Google DeepMind to turn models into autonomous software engineers.
+</div>
 
 ---
+type: standard
+title: The Paradigm Shift: Chatbots vs. Agents
+badge: EVOLUTION OF AI
+notes: Walk through the 3 phases of AI evolution: Chatbots (passive text) -> Copilots (assistive inline) -> Autonomous Agents (active execution). Explain the fundamental missing piece: LLMs have reasoning brains, but they lack hands and safety guardrails. That's why an agentic harness like Antigravity is required.
 
-### Resources & Links
-- 📘 [Google Cloud Run Documentation](https://cloud.google.com/run/docs)
-- 🐙 [GDG Presentation GitHub Scaffolding](https://github.com/)
-- 🎨 [Google Material Design Color & Typography Guidelines](https://m3.material.io/)
+# The Paradigm Shift: Chatbots vs. Agents
+### From Passive Text Generators to Autonomous Software Engineers
 
-> **Thank you for joining GDG Cloud!** Q&A Time 💬
+<div class="evolution-stepper">
+  <div class="step-card">
+    <span class="step-num">Phase 1</span>
+    <h4>Chatbots (2022–2023)</h4>
+    <p class="step-tagline">"Brain in a Jar"</p>
+    <ul>
+      <li>Text in ➔ Text out</li>
+      <li>Passive conversational assistant</li>
+      <li>Zero environment interaction</li>
+      <li>Human copy-pastes everything</li>
+    </ul>
+  </div>
+
+  <div class="step-card">
+    <span class="step-num">Phase 2</span>
+    <h4>Copilots (2023–2024)</h4>
+    <p class="step-tagline">"Smart Autocomplete"</p>
+    <ul>
+      <li>Ghost-text code suggestions</li>
+      <li>Context limited to open files</li>
+      <li>Human must drive every keystroke</li>
+      <li>No ability to run or debug code</li>
+    </ul>
+  </div>
+
+  <div class="step-card highlight-step">
+    <span class="step-num">Phase 3</span>
+    <h4>AI Agents (2025–2026)</h4>
+    <p class="step-tagline">"Autonomous Pair Programmer"</p>
+    <ul>
+      <li>Goal-oriented task execution</li>
+      <li>Plans multi-step workflows</li>
+      <li>Observes feedback & self-corrects</li>
+      <li>Operates shell, files & browser</li>
+    </ul>
+  </div>
+</div>
+
+---
+type: standard
+title: Where Does Antigravity Fit In?
+badge: AGENTIC HARNESS
+notes: This is the pivotal slide. Explain that raw LLMs are isolated brains. Antigravity provides the missing 'nervous system and hands'—safe tool execution, persistent context, subagent orchestration, and developer guardrails.
+
+# Where Does Antigravity Fit In?
+### Connecting Foundation Models to the Real-World Toolchain
+
+> 💡 **The Fundamental Gap**: An LLM has reasoning capabilities, but cannot touch your terminal, filesystem, browser, or compiler on its own.  
+> 🚀 **The Antigravity Solution**: **Antigravity is the Agentic Harness** that equips models with safe, autonomous pair-programming superpowers:
+
+| Capability Layer | Without a Harness (Raw LLM) | With Antigravity (Agentic Harness) |
+| :--- | :--- | :--- |
+| **Action & Execution** | ❌ Can only write markdown text | ✅ Executes shell commands, lints, and builds live |
+| **Feedback & Verification** | ❌ Cannot test if code works | ✅ Runs tests, inspects compiler errors, auto-fixes |
+| **Workspace Context** | ❌ Single linear chat context | ✅ Parallel subagents, background tasks, and artifacts |
+| **Safety & Tool Control** | ❌ Unbounded or hallucinated commands | ✅ Sandboxed tool authorization & workspace rules |
+
+---
+type: standard
+title: The Triad: LLMs, Agents & Harnesses
+badge: CORE ARCHITECTURE ⚡
+notes: Keep this slide crisp. Highlight the 3 roles: LLM is the engine (intelligence), Agent is the driver (strategy & loop), and Antigravity is the vehicle/chassis (tools, execution, and guardrails). Mention that an LLM alone cannot run or test code.
+
+# The Triad: LLMs, Agents & Harnesses
+### Three Essential Pillars of Autonomous Software Engineering
+
+<div class="triad-grid">
+  <div class="triad-card card-llm">
+    <div class="triad-header">
+      <div class="triad-icon-box">🧠</div>
+      <div>
+        <span class="triad-role-badge">The Cognitive Engine</span>
+        <h3 class="triad-title">Foundation Model</h3>
+      </div>
+    </div>
+    <div class="triad-analogy">🏎️ <em>The Engine (Raw Power)</em></div>
+    <ul class="triad-list">
+      <li>Natural language comprehension & code generation</li>
+      <li>Trained on billions of tokens, ASTs, and architectures</li>
+      <li>Stateless: generates text, but cannot execute commands</li>
+    </ul>
+    <div class="triad-gap-box">
+      <strong>Limitation:</strong> "Brain in a jar" — no terminal, no filesystem access.
+    </div>
+  </div>
+
+  <div class="triad-card card-agent">
+    <div class="triad-header">
+      <div class="triad-icon-box">🤖</div>
+      <div>
+        <span class="triad-role-badge">The Reasoning Loop</span>
+        <h3 class="triad-title">Autonomous Agent</h3>
+      </div>
+    </div>
+    <div class="triad-analogy">🧭 <em>The Driver (Navigation & Will)</em></div>
+    <ul class="triad-list">
+      <li>Breaks high-level goals into multi-step engineering plans</li>
+      <li>Drives the iterative <em>ReAct</em> loop (Reason ➔ Act ➔ Observe)</li>
+      <li>Evaluates test outputs & self-corrects on errors</li>
+    </ul>
+    <div class="triad-gap-box">
+      <strong>Limitation:</strong> Pure logic — requires an OS environment to touch code.
+    </div>
+  </div>
+
+  <div class="triad-card card-harness">
+    <div class="triad-header">
+      <div class="triad-icon-box">⚡</div>
+      <div>
+        <span class="triad-role-badge">The Execution Body</span>
+        <h3 class="triad-title">Antigravity (Harness)</h3>
+      </div>
+    </div>
+    <div class="triad-analogy">🛡️ <em>The Car, Controls & Hands</em></div>
+    <ul class="triad-list">
+      <li><strong>Hands:</strong> Executes shell commands, edits files & operates browser</li>
+      <li><strong>Senses:</strong> Feeds compiler errors, test logs & diffs back to agent</li>
+      <li><strong>Safety:</strong> Sandboxing, permission grants & human-in-the-loop gates</li>
+    </ul>
+    <div class="triad-gap-box">
+      <strong>The Bridge:</strong> Connects AI intelligence directly to your real codebase.
+    </div>
+  </div>
+</div>
+
+<div class="triad-formula-banner">
+  <div class="formula-flow">
+    <span class="pill-llm">🧠 LLM (Intelligence)</span>
+    <span>+</span>
+    <span class="pill-agent">🤖 Agent (Planning Loop)</span>
+    <span>+</span>
+    <span class="pill-harness">⚡ Antigravity (Harness & Hands)</span>
+    <span>=</span>
+    <span class="pill-result">🚀 Autonomous Pair Programmer</span>
+  </div>
+  <div class="formula-subtext">
+    An LLM thinks. An Agent decides. <strong>Antigravity executes and verifies.</strong>
+  </div>
+</div>
+
+---
+type: standard
+title: Deep Dive: The Autonomous ReAct Loop
+badge: AGENT REASONING 🤖
+notes: Explain the ReAct framework (Reasoning + Acting, originally published by Yao et al.). Walk through the 4 steps: 1) Thought (analyzing the problem and planning), 2) Action (choosing and invoking a tool), 3) Observation (ground truth feedback from Antigravity), and 4) Reflection (evaluating if the test passed or if debugging is needed). Emphasize that traditional LLMs are single-shot and hallucinate, while ReAct agents are self-correcting.
+
+# Deep Dive: The Autonomous ReAct Loop
+### How Agents Think, Act, Observe, and Self-Correct in Real Time
+
+> 🔄 **What is ReAct?** Rather than guessing in a single shot, an **Agent** couples **Reasoning** with **Action** in a continuous feedback loop until the goal is achieved:
+
+<div class="react-cycle-grid">
+  <div class="react-card step-thought">
+    <span class="react-step-indicator">Step 1 • Cognition</span>
+    <h4 class="react-title">💭 Thought (Reason)</h4>
+    <p class="react-desc">The agent inspects current workspace state, reads user goals, and plans the precise next step.</p>
+    <div class="react-example-box">
+      <em>"Test suite failed on AuthToken. I need to grep for the token refresh logic."</em>
+    </div>
+  </div>
+
+  <div class="react-card step-action">
+    <span class="react-step-indicator">Step 2 • Execution</span>
+    <h4 class="react-title">🛠️ Action (Tool Call)</h4>
+    <p class="react-desc">The agent invokes an Antigravity tool with structured parameters (terminal, edit, browser, search).</p>
+    <div class="react-example-box">
+      <code>grep_search("refreshToken", "./src/auth")</code>
+    </div>
+  </div>
+
+  <div class="react-card step-observation">
+    <span class="react-step-indicator">Step 3 • Ground Truth</span>
+    <h4 class="react-title">👁️ Observation (Sense)</h4>
+    <p class="react-desc">Antigravity executes the tool safely on your OS and feeds exact stdout/stderr back into the model.</p>
+    <div class="react-example-box">
+      <code>Found 2 matches in authService.ts:42 and tokenManager.ts:18</code>
+    </div>
+  </div>
+
+  <div class="react-card step-reflection">
+    <span class="react-step-indicator">Step 4 • Adaptation</span>
+    <h4 class="react-title">🔄 Reflection (Critique)</h4>
+    <p class="react-desc">The agent evaluates if the outcome advances the goal. If errors exist, it course-corrects dynamically.</p>
+    <div class="react-example-box">
+      <em>"Line 42 has a typo in expiry math. Let me apply a targeted diff and re-run tests."</em>
+    </div>
+  </div>
+</div>
+
+> 💡 **Why This Changes Everything:** A raw LLM hallucinates and stops. A **ReAct Agent inside Antigravity** keeps running tests until your code actually builds and passes!
+
+---
+type: standard
+title: Antigravity Surfaces & Ecosystem
+badge: PRODUCT SURFACES 🌐
+notes: Introduce the detour into Antigravity surfaces. Explain that Antigravity is not just a single interface; it adapts to how developers work. 1) Antigravity 2.0 (the standalone desktop app for multi-project orchestration), 2) Antigravity IDE (the dedicated AI-first VS Code-based editor), 3) Editor Extensions (for VS Code and JetBrains), and 4) Antigravity CLI 'agy' (for terminal ninjas and headless CI/CD).
+
+# Antigravity Surfaces & Flavors
+### Flexible Developer Ergonomics: Work Wherever You Are Most Productive
+
+<div class="surfaces-grid">
+  <div class="surface-card">
+    <div class="surface-icon">🖥️</div>
+    <h4 class="surface-title">Standalone App</h4>
+    <span class="surface-tagline">Antigravity 2.0</span>
+    <ul class="surface-bullets">
+      <li>Multi-project desktop canvas</li>
+      <li>Auxiliary pane for subagents & artifacts</li>
+      <li>Live side-by-side app Preview Mode</li>
+      <li>Background tasks & cron orchestration</li>
+    </ul>
+  </div>
+
+  <div class="surface-card">
+    <div class="surface-icon">💻</div>
+    <h4 class="surface-title">Antigravity IDE</h4>
+    <span class="surface-tagline">AI-First Editor (VS Code Fork)</span>
+    <ul class="surface-bullets">
+      <li>Native Antigravity Tab autocomplete</li>
+      <li>Inline Command (<kbd>⌘I</kbd> / <kbd>Ctrl+I</kbd>) targeted edits</li>
+      <li>Interactive inline red/green diff review</li>
+      <li>Diagnostic compiler auto-fix lenses</li>
+    </ul>
+  </div>
+
+  <div class="surface-card">
+    <div class="surface-icon">🔌</div>
+    <h4 class="surface-title">Editor Extensions</h4>
+    <span class="surface-tagline">VS Code & JetBrains</span>
+    <ul class="surface-bullets">
+      <li>Drop-in plugins for your existing IDE</li>
+      <li>Sidebar chat & agent pair-programming</li>
+      <li>No need to switch tools or keyboard shortcuts</li>
+      <li>Shares global Antigravity config & rules</li>
+    </ul>
+  </div>
+
+  <div class="surface-card">
+    <div class="surface-icon">⌨️</div>
+    <h4 class="surface-title">Antigravity CLI</h4>
+    <span class="surface-tagline">`agy` Terminal & Headless</span>
+    <ul class="surface-bullets">
+      <li>Blazing-fast lightweight terminal TUI</li>
+      <li>Remote SSH & cloud VM pair-programming</li>
+      <li>Headless batch execution for CI/CD pipelines</li>
+      <li>Full slash command & MCP tool support</li>
+    </ul>
+  </div>
+</div>
+
+> ⚡ **Unified Engine Under the Hood:** All 4 surfaces share the exact same agentic core, skills, security sandboxes, and customization system.
+
+---
+type: standard
+title: Live Demo: Standalone App
+badge: DEMO BREAK 🎬
+notes: Announce the demo break! Switch over to the running Antigravity 2.0 desktop application and perform the two demonstration actions. Show how Projects keep workspaces isolated, and show how Preview mode renders the web UI side-by-side as the agent writes code.
+
+# Live Demo: Standalone App
+### Hands-On Tour of Antigravity 2.0
+
+### 🎯 Actions to Perform During Demo:
+
+1. **Projects Management**
+   - Switch between active workspaces and repositories.
+   - Show how each project isolates context, custom instructions, and `.agents/rules/`.
+   - Demonstrate per-project permission and terminal sandbox controls.
+
+2. **Live Preview Mode**
+   - Prompt the agent to make a UI or style modification.
+   - Watch the live preview pane render and test the web application side-by-side with code diffs.
+   - Show real-time browser inspection and feedback.
+
+> 🎬 **Demo Time:** Let's switch over to the live Antigravity desktop app!
+
+---
+type: standard
+title: Antigravity Terminology: Core Concepts
+badge: KEY CONCEPTS 💡
+notes: Walk the audience through the 3 essential Antigravity terms. 1) Skills: Modular packages of instructions and scripts loaded on demand (like cheatsheets). 2) Build with Google Bundles: Official pre-configured plugin bundles (Firebase, Android CLI, Chrome DevTools, Science). 3) Browser in the Loop: Autonomous CDP browser subagent that clicks, tests, and visualizes web apps.
+
+# Antigravity Terminology: Core Concepts
+### The Three Essential Building Blocks of Modern Agentic Workflows
+
+<div class="terminology-grid">
+  <div class="terminology-card term-skills">
+    <span class="term-badge">Modular Knowledge</span>
+    <h3 class="term-title">🎯 Skills (`SKILL.md`)</h3>
+    <p class="term-desc">
+      Specialized folders containing procedural workflows, scripts, and references. Instead of cramming entire library manuals into model prompts, Antigravity loads skills <strong>dynamically on demand</strong> when triggered by user intent.
+    </p>
+    <ul class="triad-list">
+      <li>Token-efficient: only loaded when relevant</li>
+      <li>Supports project-level (<code>.agents/skills/</code>) and global scopes</li>
+      <li>Equips agents with domain mastery (e.g. Firebase, Docker, React)</li>
+    </ul>
+  </div>
+
+  <div class="terminology-card term-bundles">
+    <span class="term-badge">Turnkey Toolchains</span>
+    <h3 class="term-title">📦 Build with Google Bundles</h3>
+    <p class="term-desc">
+      Official, pre-packaged plugin suites maintained by Google engineering teams. They bundle ready-to-use skills, specialized subagents, and MCP (Model Context Protocol) configurations into turnkey packages.
+    </p>
+    <ul class="triad-list">
+      <li><strong>Firebase Bundle:</strong> Firestore, Auth, App Hosting & Cloud Functions</li>
+      <li><strong>Chrome DevTools:</strong> Lighthouse audits, memory leaks & a11y</li>
+      <li><strong>Android CLI & Science:</strong> SDK orchestration & research tools</li>
+    </ul>
+  </div>
+
+  <div class="terminology-card term-browser">
+    <span class="term-badge">Visual Agency</span>
+    <h3 class="term-title">🌐 Browser in the Loop</h3>
+    <p class="term-desc">
+      An autonomous browser subagent integrated via Chrome DevTools Protocol (CDP). Gives the agent visual eyes and mouse/keyboard hands to interact directly with web interfaces.
+    </p>
+    <ul class="triad-list">
+      <li>Navigates web pages, clicks buttons, and fills test forms</li>
+      <li>Extracts DOM trees, inspects network requests & captures console logs</li>
+      <li>Takes visual screenshots and records WebP session replays</li>
+    </ul>
+  </div>
+</div>
+
+---
+type: standard
+title: Live Demo: Skills, Bundles & Browser
+badge: DEMO BREAK 🎬
+notes: Break out into the live demo! Show the 3 capabilities in action: 1) Trigger a skill by asking a domain question or workflow, 2) Show a Build with Google bundle in the plugins list, and 3) Run a browser subagent task and watch it navigate and inspect a web page live.
+
+# Live Demo: Skills, Bundles & Browser
+### Hands-On Demonstration of Advanced Capabilities
+
+### 🎯 Actions to Perform During Demo:
+
+1. **Triggering an On-Demand Skill**
+   - Prompt the agent with a domain-specific task (e.g. Firebase rule auditing, accessibility audit, or Docker setup).
+   - Show how the matching `SKILL.md` loads dynamically on demand without polluting prompt context.
+
+2. **Build with Google Bundles**
+   - Inspect the active plugins and bundles list in the environment.
+   - Highlight curated Google toolchains (Chrome DevTools, Firebase, Android CLI) providing pre-wired MCP servers and subagents.
+
+3. **Browser in the Loop Live Action**
+   - Instruct the agent to visually inspect or test a frontend flow in Chrome.
+   - Watch the agent navigate the DOM, click elements, fill test inputs, and capture visual artifacts.
+
+> 🎬 **Demo Time:** Let's switch to the live environment to watch Skills & Browser automation in action!
+
+---
+type: standard
+title: Models Supported
+badge: MULTI-MODEL ECOSYSTEM 🧠
+notes: Highlight Antigravity's actual model catalog. Explain that Antigravity natively supports Google Gemini with granular reasoning effort levels (High, Medium, Low), as well as Anthropic Claude with Thinking models, plus open-weight models like GPT-OSS 120B. Note that proprietary OpenAI models, Meta Llama, and Gemma are not in the native catalog.
+
+# Models Supported
+### Native Model Catalog in Google Antigravity
+
+### 🔵 Google Gemini Models (Configurable Reasoning Effort)
+- **Gemini 3.1 Pro** (`High` / `Low`) — Whole-codebase architecture, planning & deep logic
+- **Gemini 3.8 Flash** (`High` / `Medium` / `Low`) — Latest frontier speed & reasoning balance
+- **Gemini 3.7 Flash** (`High` / `Medium` / `Low`) — Rapid code edits, subagent tasks & fast iterations
+- **Gemini 3.6 Flash** (`High` / `Medium` / `Low`) — High-throughput search, log scanning & testing
+
+### 🔴 Non-Google Frontier Models
+- **Claude Sonnet 4.6 (Thinking)** — Premier coding benchmark performance with extended thinking
+- **Claude Opus 4.6 (Thinking)** — Deep architectural synthesis & complex refactoring
+
+### 🟢 Open-Weight Models
+- **GPT-OSS 120B (Medium)** — 120B parameter open-weight model for transparent execution
+
+> 🔍 **Catalog Verification:** Proprietary OpenAI models (GPT-4o/o1), Meta Llama models, and Gemma are **not** natively available in Antigravity. Supported models focus on Google Gemini, Anthropic Claude (Thinking), and GPT-OSS.
+
+---
+type: standard
+title: Slash Commands: Planning & Autonomy
+badge: AGENT WORKFLOWS ⚡
+notes: Introduce slash commands for planning and deep autonomous execution. 1) /plan prepares a structured design before any code edits, 2) /goal runs an end-to-end mission that persists until completion, and 3) /grill-me acts as an architectural interview.
+
+# Slash Commands: Planning & Autonomy
+### High-Leverage Commands for Deep Engineering Workflows
+
+- **`/plan`** — **Architectural Planning Mode**  
+  Prompts the agent to research your codebase, design a step-by-step implementation strategy, and pause for your review before touching any code.
+
+- **`/goal`** — **Autonomous Mission Mode**  
+  Instructs the agent to work thoroughly and persistently without stopping until a complex objective is 100% completed, self-correcting through roadblocks.
+
+- **`/grill-me`** — **Requirements Discovery Interview**  
+  The agent conducts an interactive interview with you, asking targeted clarifying questions to eliminate ambiguity and nail down design decisions.
+
+> 💡 **Best Practice:** Start complex refactors with **`/plan`** or **`/grill-me`**, then execute with **`/goal`**.
+
+---
+type: standard
+title: Slash Commands: Workflow & Memory
+badge: AGENT WORKFLOWS ⚡
+notes: Cover workflow automation and persistent memory. 1) /schedule manages background timers and cron monitoring, 2) /learn converts developer corrections into permanent repository rules, and 3) /review audits git diffs before merging.
+
+# Slash Commands: Workflow & Memory
+### Continuous Monitoring, Rule Persistence & Code Review
+
+- **`/schedule`** — **Background Schedulers & Timers**  
+  Schedules a recurring cron job (e.g. periodic health checks, build monitoring) or sets a delayed reminder timer that runs in the background.
+
+- **`/learn`** — **Persistent Repository Knowledge**  
+  Captures a developer correction, architectural pattern, or team convention and persists it as a permanent rule in `.agents/rules/`.
+
+- **`/review`** — **Automated Code Review & Security Audit**  
+  Thoroughly audits all uncommitted git changes for regression risks, security vulnerabilities, edge cases, and code style compliance.
+
+> 💡 **Best Practice:** Whenever you correct the agent's behavior, run **`/learn`** so it never makes the same mistake again!
+
+---
+type: standard
+title: Slash Commands: Quality & Context
+badge: AGENT WORKFLOWS ⚡
+notes: Cover test validation, context management, and discovery. 1) /test automatically runs test suites, 2) /compact summarizes conversation history to reclaim context window tokens, and 3) /help shows the command catalog.
+
+# Slash Commands: Quality & Context
+### Test Execution, Token Optimization & Command Hub
+
+- **`/test`** — **Automated Validation Matrix**  
+  Discovers and executes local unit and integration tests, reporting pass/fail breakdowns and feeding compiler failures into the self-correction loop.
+
+- **`/compact`** — **Context Window Optimizer**  
+  Summarizes conversation history to reclaim token budget during long pairing sessions while preserving critical task context and decisions.
+
+- **`/help`** — **Command & Skill Directory**  
+  Lists all available built-in slash commands, active skills, subagents, and environment configuration options.
+
+> ⌨️ **Quick Tip:** Type **`@`** at any prompt to attach files, symbols, past conversations, or rules directly into any slash command!
+
+---
+type: standard
+title: Resources & Wrap-Up
+badge: WRAP-UP
+notes: Wrap up the presentation. Direct attendees to the official Antigravity documentation and open the floor for Q&A.
+
+# Resources & Community Links
+### Google Antigravity & GDG on Campus University of Windsor
+
+- 📘 [Official Google Antigravity Documentation](https://antigravity.google/docs)
+- 🌐 [Antigravity by Google](https://antigravity.google)
+- 🐙 [GDG Presentation GitHub Repository](https://github.com/donwardpeng/antigravity_presentation)
+- 🎨 [Google Material Design Guidelines](https://m3.material.io/)
+
+> **Thank you for joining GDG on Campus University of Windsor!** Q&A Time 💬
+
+---
+type: standard
+title: Thank You!
+badge: GDG TECH TALK 💙
+notes: Conclude the tech talk! Thank the audience for their time and GDG on Campus University of Windsor for hosting. Open the floor for questions, discussions, and networking.
+
+# Thank You!
+### GDG on Campus University of Windsor • Tech Talk
+
+> 🎉 **Thank you for joining us for "Antigravity: Harnessing the Power"!**  
+> We hope this inspired you to build and experiment with autonomous agentic workflows.
+
+### 👥 Connect with Tonight's Speakers:
+- **Don Ward** — Customer Engineer, Google Cloud
+- **Byran Kelly** — Forward Deployed Engineer, Google Cloud
+
+### 💬 Open Q&A Time
+The floor is now open for your questions! Ask about:
+- Agentic harnesses vs. copilots
+- Custom skills and Build with Google bundles
+- Browser automation in your testing pipeline
+- Getting started with the Antigravity CLI and standalone app
+
+---
+type: standard
+title: Appendix: Presentation Cheatsheet
+badge: APPENDIX 📑
+notes: Appendix reference containing presentation platform keyboard shortcuts and navigation tips.
+
+# Appendix: Presentation Cheatsheet
+### Presenter Controls & Platform Shortcuts
+
+> 💡 **Navigation Shortcuts:** Press **`→`** or **`Space`** to advance. Press **`S`** for Speaker Notes with Live Timer, **`M`** for Slide Drawer, and **`F`** for Fullscreen.
+
+```json
+{
+  "event": "GDG on Campus University of Windsor 2026",
+  "topic": "Antigravity: Harnessing the Power",
+  "appendix_reference": {
+    "next_slide": "Right Arrow / Space / PageDown",
+    "prev_slide": "Left Arrow / Backspace / PageUp",
+    "speaker_notes": "S (Notes + Live Stopwatch)",
+    "slide_drawer": "M (Visual Slide Grid)",
+    "fullscreen": "F (Toggle Fullscreen Mode)",
+    "dark_light_mode": "Header Sun/Moon Icon"
+  }
+}
+```
