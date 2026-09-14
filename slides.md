@@ -546,16 +546,9 @@ notes: Conclude the tech talk! Thank the audience for their time and GDG on Camp
 > 🎉 **Thank you for joining us for "Antigravity: Harnessing the Power"!**  
 > We hope this inspired you to build and experiment with autonomous agentic workflows.
 
-### 👥 Connect with Tonight's Speakers:
+### 👥 Connect with Today's Speakers:
 - **Don Ward** — Customer Engineer, Google Cloud
-- **Byran Kelly** — Forward Deployed Engineer, Google Cloud
-
-### 💬 Open Q&A Time
-The floor is now open for your questions! Ask about:
-- Agentic harnesses vs. copilots
-- Custom skills and Build with Google bundles
-- Browser automation in your testing pipeline
-- Getting started with the Antigravity CLI and standalone app
+- **Bryan Kelly** — Forward Deployed Engineer, Google Cloud
 
 ---
 type: standard
