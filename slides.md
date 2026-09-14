@@ -29,7 +29,7 @@ notes: Introduce tonight's speakers from GDG on Campus University of Windsor. Gi
   {
     "name": "Bryan Kelly",
     "title": "Forward Deployed Engineer",
-    "headshot": "/images/bryan-kelly.jpg",
+    "headshot": "/images/bryankelly.png",
     "company": "Google Cloud",
     "topic": ""
   }
