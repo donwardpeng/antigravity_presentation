@@ -20,16 +20,16 @@ notes: Introduce tonight's speakers from GDG on Campus University of Windsor. Gi
 ```speakers
 [
   {
-    "name": "Don Ward",
-    "title": "Customer Engineer",
-    "headshot": "/images/don-ward.jpg",
+    "name": "Bryan Kelly",
+    "title": "Forward Deployed Engineer",
+    "headshot": "/images/bryankelly.png",
     "company": "Google Cloud",
     "topic": ""
   },
   {
-    "name": "Bryan Kelly",
-    "title": "Forward Deployed Engineer",
-    "headshot": "/images/bryankelly.png",
+    "name": "Don Ward",
+    "title": "Customer Engineer",
+    "headshot": "/images/don-ward.jpg",
     "company": "Google Cloud",
     "topic": ""
   }
@@ -547,8 +547,8 @@ notes: Conclude the tech talk! Thank the audience for their time and GDG on Camp
 > We hope this inspired you to build and experiment with autonomous agentic workflows.
 
 ### 👥 Connect with Today's Speakers:
-- **Don Ward** — Customer Engineer, Google Cloud
 - **Bryan Kelly** — Forward Deployed Engineer, Google Cloud
+- **Don Ward** — Customer Engineer, Google Cloud
 
 ---
 type: standard
