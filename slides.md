@@ -401,11 +401,11 @@ notes: Walk the audience through the 3 essential Antigravity terms. 1) Skills: M
 
 ---
 type: standard
-title: Live Demo: Skills, Bundles & Browser
+title: Live Demo: Skills & Bundles
 badge: DEMO BREAK 🎬
-notes: Break out into the live demo! Show the 3 capabilities in action: 1) Trigger a skill by asking a domain question or workflow, 2) Show a Build with Google bundle in the plugins list, and 3) Run a browser subagent task and watch it navigate and inspect a web page live.
+notes: Break out into the live demo! Show the capabilities in action: 1) Trigger a skill by asking a domain question or workflow, and 2) Show a Build with Google bundle in the plugins list.
 
-# Live Demo: Skills, Bundles & Browser
+# Live Demo: Skills & Bundles
 ### Hands-On Demonstration of Advanced Capabilities
 
 ### 🎯 Actions to Perform During Demo:
@@ -418,11 +418,7 @@ notes: Break out into the live demo! Show the 3 capabilities in action: 1) Trigg
    - Inspect the active plugins and bundles list in the environment.
    - Highlight curated Google toolchains (Chrome DevTools, Firebase, Android CLI) providing pre-wired MCP servers and subagents.
 
-3. **Browser in the Loop Live Action**
-   - Instruct the agent to visually inspect or test a frontend flow in Chrome.
-   - Watch the agent navigate the DOM, click elements, fill test inputs, and capture visual artifacts.
-
-> 🎬 **Demo Time:** Let's switch to the live environment to watch Skills & Browser automation in action!
+> 🎬 **Demo Time:** Let's switch to the live environment to watch Skills & Bundles in action!
 
 ---
 type: standard
