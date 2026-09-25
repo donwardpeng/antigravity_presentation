@@ -424,7 +424,7 @@ notes: Break out into the live demo! Show the capabilities in action: 1) Trigger
 type: standard
 title: Models Supported
 badge: MULTI-MODEL ECOSYSTEM 🧠
-notes: Highlight Antigravity's actual model catalog. Explain that Antigravity natively supports Google Gemini with granular reasoning effort levels (High, Medium, Low), as well as Anthropic Claude with Thinking models, plus open-weight models like GPT-OSS 120B. Note that proprietary OpenAI models, Meta Llama, and Gemma are not in the native catalog.
+notes: Highlight Antigravity's actual model catalog. Explain that Antigravity natively supports Google Gemini with granular reasoning effort levels (High, Medium, Low), as well as Anthropic Claude with Thinking models, plus open-weight models like GPT-OSS 120B.
 
 # Models Supported
 ### Native Model Catalog in Google Antigravity
@@ -441,8 +441,6 @@ notes: Highlight Antigravity's actual model catalog. Explain that Antigravity na
 
 ### 🟢 Open-Weight Models
 - **GPT-OSS 120B (Medium)** — 120B parameter open-weight model for transparent execution
-
-> 🔍 **Catalog Verification:** Proprietary OpenAI models (GPT-4o/o1), Meta Llama models, and Gemma are **not** natively available in Antigravity. Supported models focus on Google Gemini, Anthropic Claude (Thinking), and GPT-OSS.
 
 ---
 type: standard
