@@ -370,23 +370,17 @@ notes: Walk the audience through the 3 essential Antigravity terms. 1) Skills: M
   <div class="terminology-card term-skills">
     <span class="term-badge">Modular Knowledge</span>
     <h3 class="term-title">🎯 Skills (`SKILL.md`)</h3>
-    <p class="term-desc">
-      Specialized folders containing procedural workflows, scripts, and references. Instead of cramming entire library manuals into model prompts, Antigravity loads skills <strong>dynamically on demand</strong> when triggered by user intent.
-    </p>
     <ul class="triad-list">
-      <li>Token-efficient: only loaded when relevant</li>
-      <li>Supports project-level (<code>.agents/skills/</code>) and global scopes</li>
-      <li>Equips agents with domain mastery (e.g. Firebase, Docker, React)</li>
+      <li>Modular folders of procedural workflows loaded dynamically on demand when triggered by user intent.</li>
+      <li><strong>Examples:</strong> Firebase, Docker, React, Chrome Extensions & custom workspace tools (<code>.agents/skills/</code>).</li>
     </ul>
   </div>
 
   <div class="terminology-card term-bundles">
     <span class="term-badge">Turnkey Toolchains</span>
     <h3 class="term-title">📦 Build with Google Bundles</h3>
-    <p class="term-desc">
-      Official, pre-packaged plugin suites maintained by Google engineering teams. They bundle ready-to-use skills, specialized subagents, and MCP (Model Context Protocol) configurations into turnkey packages.
-    </p>
     <ul class="triad-list">
+      <li>Official turnkey plugin suites combining ready-to-use skills, subagents, and MCP configurations.</li>
       <li><strong>Firebase Bundle:</strong> Firestore, Auth, App Hosting & Cloud Functions</li>
       <li><strong>Chrome DevTools:</strong> Lighthouse audits, memory leaks & a11y</li>
       <li><strong>Android CLI & Science:</strong> SDK orchestration & research tools</li>
@@ -396,13 +390,11 @@ notes: Walk the audience through the 3 essential Antigravity terms. 1) Skills: M
   <div class="terminology-card term-browser">
     <span class="term-badge">Visual Agency</span>
     <h3 class="term-title">🌐 Browser in the Loop</h3>
-    <p class="term-desc">
-      An autonomous browser subagent integrated via Chrome DevTools Protocol (CDP). Gives the agent visual eyes and mouse/keyboard hands to interact directly with web interfaces.
-    </p>
     <ul class="triad-list">
-      <li>Navigates web pages, clicks buttons, and fills test forms</li>
-      <li>Extracts DOM trees, inspects network requests & captures console logs</li>
-      <li>Takes visual screenshots and records WebP session replays</li>
+      <li>Autonomous browser subagent via CDP that provides visual eyes and interaction hands.</li>
+      <li><strong>Interaction:</strong> Navigates web pages, clicks buttons, and fills test forms</li>
+      <li><strong>Inspection:</strong> Extracts DOM trees, inspects network requests & captures console logs</li>
+      <li><strong>Recording:</strong> Takes visual screenshots and records WebP session replays</li>
     </ul>
   </div>
 </div>

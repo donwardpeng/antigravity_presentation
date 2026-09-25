@@ -1966,6 +1966,21 @@ pre[class*="language-"] {
   margin-bottom: 12px;
 }
 
+.terminology-card .triad-list {
+  margin-top: 6px;
+  gap: 10px;
+}
+
+.terminology-card .triad-list li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.terminology-card .triad-list li strong {
+  color: var(--text-primary);
+}
+
 /* ==========================================================================
    Slide 11: Supported Models Grid
    ========================================================================== */
