@@ -138,6 +138,11 @@ try {
 // Serve static frontend assets
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Explicit route for /download
+app.get('/download', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'download.html'));
+});
+
 // Catch-all route to index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

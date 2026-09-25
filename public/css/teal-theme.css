@@ -1,0 +1,127 @@
+
+/* Google Antigravity Download Page - Premium Teal Theme */
+:root {
+  --theme-teal-bg-dark: #041b21;
+  --theme-teal-bg-mid: #09343c;
+  --theme-teal-bg-accent: #004d40;
+  --theme-teal-card-bg: rgba(8, 44, 53, 0.85);
+  --theme-teal-card-border: rgba(0, 206, 209, 0.25);
+  --theme-teal-primary: #00bfa5;
+  --theme-teal-primary-hover: #00e676;
+  --theme-teal-text-main: #e0f2f1;
+  --theme-teal-text-muted: #80cbd7;
+  --theme-teal-heading: #ffffff;
+}
+
+body, html, main, .download-page {
+  background: linear-gradient(145deg, var(--theme-teal-bg-dark) 0%, var(--theme-teal-bg-mid) 50%, var(--theme-teal-bg-accent) 100%) !important;
+  color: var(--theme-teal-text-main) !important;
+  min-height: 100vh;
+}
+
+.header {
+  background: rgba(4, 27, 33, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 206, 209, 0.2) !important;
+}
+
+.header a, .header button, .button-nav, .logo-link {
+  color: var(--theme-teal-text-main) !important;
+}
+
+.button-nav:hover {
+  color: #a7ffeb !important;
+  background: rgba(0, 191, 165, 0.15) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6, .section-title, .standalone-title, .extension-name {
+  color: var(--theme-teal-heading) !important;
+}
+
+p, .body, .caption, .section-description, .extension-description, .standalone-description {
+  color: var(--theme-teal-text-muted) !important;
+}
+
+.extension-item, .standalone-ide-wrapper, .os-platform-container, .code-container {
+  background: var(--theme-teal-card-bg) !important;
+  border: 1px solid var(--theme-teal-card-border) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.extension-item:hover, .standalone-ide-wrapper:hover {
+  border-color: rgba(0, 230, 118, 0.5) !important;
+  box-shadow: 0 12px 40px rgba(0, 230, 118, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+.button-primary, .download-button {
+  background: linear-gradient(135deg, #00bfa5 0%, #00897b 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 191, 165, 0.4) !important;
+  font-weight: 500 !important;
+}
+
+.button-primary:hover, .download-button:hover {
+  background: linear-gradient(135deg, #00e676 0%, #00bfa5 100%) !important;
+  box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5) !important;
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  background: rgba(0, 191, 165, 0.12) !important;
+  color: #a7ffeb !important;
+  border: 1px solid rgba(0, 191, 165, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.button-secondary:hover {
+  background: rgba(0, 191, 165, 0.25) !important;
+  color: #ffffff !important;
+  border-color: #00e676 !important;
+}
+
+.code-container {
+  background: #021217 !important;
+  border: 1px solid #005662 !important;
+}
+
+.code-container code, .code-container pre {
+  color: #a7ffeb !important;
+}
+
+.nav-version-chip {
+  background: rgba(0, 191, 165, 0.2) !important;
+  color: #a7ffeb !important;
+  border: 1px solid rgba(0, 191, 165, 0.4) !important;
+}
+
+/* Footer styling */
+footer, .antigravity-footer-wrapper, .footer {
+  background: #020f13 !important;
+  border-top: 1px solid rgba(0, 206, 209, 0.2) !important;
+  color: var(--theme-teal-text-muted) !important;
+}
+
+footer a, .footer a {
+  color: #a7ffeb !important;
+}
+
+footer a:hover, .footer a:hover {
+  color: #00e676 !important;
+}
+
+/* Tab button styling */
+[data-os-tab], button {
+  transition: all 0.2s ease;
+}
+
+button.active, button.selected {
+  background: #00bfa5 !important;
+  color: #ffffff !important;
+}
