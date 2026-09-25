@@ -517,19 +517,17 @@ notes: Cover test validation, context management, and discovery. 1) /test automa
 
 ---
 type: standard
-title: Resources & Wrap-Up
-badge: WRAP-UP
-notes: Wrap up the presentation. Direct attendees to the official Antigravity documentation and open the floor for Q&A.
+title: Next Steps
+badge: NEXT STEPS 🚀
+notes: Present immediate next steps for the audience: 1) Explore the presentation codebase on GitHub to review the agent harness implementation, and 2) Dive into hands-on labs on Google Qwiklabs.
 
-# Resources & Community Links
-### Google Antigravity & GDG on Campus University of Windsor
+# Next Steps
 
-- 📘 [Official Google Antigravity Documentation](https://antigravity.google/docs)
-- 🌐 [Antigravity by Google](https://antigravity.google)
-- 🐙 [GDG Presentation GitHub Repository](https://github.com/donwardpeng/antigravity_presentation)
-- 🎨 [Google Material Design Guidelines](https://m3.material.io/)
+1. This presentations GitHub Repo  
+   [https://github.com/donwardpeng/antigravity_presentation](https://github.com/donwardpeng/antigravity_presentation)
 
-> **Thank you for joining GDG on Campus University of Windsor!** Q&A Time 💬
+2. Lab  
+   [https://explore.qwiklabs.com](https://explore.qwiklabs.com)
 
 ---
 type: standard

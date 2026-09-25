@@ -411,6 +411,56 @@ body {
   line-height: 1.5;
 }
 
+.slide-card ol {
+  margin-left: 28px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.slide-card ol li {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.slide-card a {
+  color: var(--google-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.slide-card a:hover {
+  color: var(--google-blue-hover);
+}
+
+.slide-card ol li a {
+  display: inline-block;
+  font-family: var(--font-code);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--google-blue);
+  background: rgba(26, 115, 232, 0.08);
+  border: 1px solid rgba(26, 115, 232, 0.25);
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-top: 8px;
+  text-decoration: none;
+  word-break: break-all;
+  transition: all 0.2s ease;
+}
+
+.slide-card ol li a:hover {
+  background: var(--google-blue);
+  color: #ffffff;
+  border-color: var(--google-blue);
+  transform: translateX(4px);
+}
+
 /* Inline code badges */
 .slide-card code:not(pre code) {
   font-family: var(--font-code);
