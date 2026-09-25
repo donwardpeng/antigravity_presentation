@@ -2359,4 +2359,152 @@ pre[class*="language-"] {
   }
 }
 
+/* --------------------------------------------------------------------------
+   Next Steps Component (Slide 19)
+   -------------------------------------------------------------------------- */
+.next-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 36px 0 20px 0;
+  width: 100%;
+  max-width: 1050px;
+}
+
+.next-step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 34px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.next-step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+.next-step-card.card-repo {
+  border-left: 8px solid var(--google-blue);
+}
+
+.next-step-card.card-lab {
+  border-left: 8px solid var(--google-green);
+}
+
+.next-step-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-main);
+}
+
+.card-repo .next-step-badge {
+  background: rgba(26, 115, 232, 0.12);
+  color: var(--google-blue);
+  border: 2px solid rgba(26, 115, 232, 0.25);
+}
+
+.card-lab .next-step-badge {
+  background: rgba(30, 142, 62, 0.12);
+  color: var(--google-green);
+  border: 2px solid rgba(30, 142, 62, 0.25);
+}
+
+.next-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.next-step-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+.next-step-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--bg-card-border);
+  text-decoration: none;
+  transition: var(--transition);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.next-step-url {
+  font-family: var(--font-code);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--google-blue);
+  word-break: break-all;
+}
+
+.dark-mode .next-step-url {
+  color: #8ab4f8;
+}
+
+.next-step-arrow {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--google-blue);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.next-step-link:hover {
+  background: var(--google-blue);
+  border-color: var(--google-blue);
+  box-shadow: 0 6px 20px rgba(26, 115, 232, 0.3);
+}
+
+.next-step-link:hover .next-step-url,
+.next-step-link:hover .next-step-arrow {
+  color: #ffffff;
+}
+
+.next-step-link:hover .next-step-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 768px) {
+  .next-step-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 22px;
+    gap: 16px;
+  }
+  .next-step-badge {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  .next-step-title {
+    font-size: 1.4rem;
+  }
+  .next-step-url {
+    font-size: 1rem;
+  }
+}
+
 

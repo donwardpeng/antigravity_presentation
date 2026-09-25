@@ -523,11 +523,29 @@ notes: Present immediate next steps for the audience: 1) Explore the presentatio
 
 # Next Steps
 
-1. This presentations GitHub Repo  
-   [https://github.com/donwardpeng/antigravity_presentation](https://github.com/donwardpeng/antigravity_presentation)
+<div class="next-steps-container">
+  <div class="next-step-card card-repo">
+    <div class="next-step-badge">1</div>
+    <div class="next-step-content">
+      <h3 class="next-step-title">This presentation's GitHub Repo</h3>
+      <a href="https://github.com/donwardpeng/antigravity_presentation" target="_blank" class="next-step-link">
+        <span class="next-step-url">https://github.com/donwardpeng/antigravity_presentation</span>
+        <span class="next-step-arrow">↗</span>
+      </a>
+    </div>
+  </div>
 
-2. Lab  
-   [https://explore.qwiklabs.com](https://explore.qwiklabs.com)
+  <div class="next-step-card card-lab">
+    <div class="next-step-badge">2</div>
+    <div class="next-step-content">
+      <h3 class="next-step-title">Lab</h3>
+      <a href="https://explore.qwiklabs.com" target="_blank" class="next-step-link">
+        <span class="next-step-url">https://explore.qwiklabs.com</span>
+        <span class="next-step-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 ---
 type: standard
