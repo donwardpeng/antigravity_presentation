@@ -311,48 +311,24 @@ notes: Introduce the detour into Antigravity surfaces. Explain that Antigravity 
     <div class="surface-icon">🖥️</div>
     <h4 class="surface-title">Standalone App</h4>
     <span class="surface-tagline">Antigravity 2.0</span>
-    <ul class="surface-bullets">
-      <li>Multi-project desktop canvas</li>
-      <li>Auxiliary pane for subagents & artifacts</li>
-      <li>Live side-by-side app Preview Mode</li>
-      <li>Background tasks & cron orchestration</li>
-    </ul>
   </div>
 
   <div class="surface-card">
     <div class="surface-icon">💻</div>
     <h4 class="surface-title">Antigravity IDE</h4>
     <span class="surface-tagline">AI-First Editor (VS Code Fork)</span>
-    <ul class="surface-bullets">
-      <li>Native Antigravity Tab autocomplete</li>
-      <li>Inline Command (<kbd>⌘I</kbd> / <kbd>Ctrl+I</kbd>) targeted edits</li>
-      <li>Interactive inline red/green diff review</li>
-      <li>Diagnostic compiler auto-fix lenses</li>
-    </ul>
   </div>
 
   <div class="surface-card">
     <div class="surface-icon">🔌</div>
     <h4 class="surface-title">Editor Extensions</h4>
     <span class="surface-tagline">VS Code & JetBrains</span>
-    <ul class="surface-bullets">
-      <li>Drop-in plugins for your existing IDE</li>
-      <li>Sidebar chat & agent pair-programming</li>
-      <li>No need to switch tools or keyboard shortcuts</li>
-      <li>Shares global Antigravity config & rules</li>
-    </ul>
   </div>
 
   <div class="surface-card">
     <div class="surface-icon">⌨️</div>
     <h4 class="surface-title">Antigravity CLI</h4>
     <span class="surface-tagline">`agy` Terminal & Headless</span>
-    <ul class="surface-bullets">
-      <li>Blazing-fast lightweight terminal TUI</li>
-      <li>Remote SSH & cloud VM pair-programming</li>
-      <li>Headless batch execution for CI/CD pipelines</li>
-      <li>Full slash command & MCP tool support</li>
-    </ul>
   </div>
 </div>
 
