@@ -23,22 +23,18 @@ notes: Take a quick moment to gauge the audience! Ask for a show of hands across
   <div class="poll-card accent-blue">
     <span class="poll-badge">🎓</span>
     <h4>Students & Learners</h4>
-    <p>CS, Software Engineering, or tech students exploring modern developer tools & agentic workflows.</p>
   </div>
   <div class="poll-card accent-red">
     <span class="poll-badge">💻</span>
     <h4>Software Engineers</h4>
-    <p>Frontend, backend, or full-stack developers looking to level up daily pair-programming productivity.</p>
   </div>
   <div class="poll-card accent-yellow">
     <span class="poll-badge">🤖</span>
     <h4>AI / ML Enthusiasts</h4>
-    <p>Practitioners excited by autonomous agents, tool calling, ReAct loops, and agentic harnesses.</p>
   </div>
   <div class="poll-card accent-green">
     <span class="poll-badge">🚀</span>
     <h4>Builders & Innovators</h4>
-    <p>Founders, hobbyists, and tech leads evaluating how AI agents will reshape software creation.</p>
   </div>
 </div>
 
