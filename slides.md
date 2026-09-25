@@ -171,15 +171,16 @@ notes: This is the pivotal slide. Explain that raw LLMs are isolated brains. Ant
 # Where Does Antigravity Fit In?
 ### Connecting Foundation Models to the Real-World Toolchain
 
-> 💡 **The Fundamental Gap**: An LLM has reasoning capabilities, but cannot touch your terminal, filesystem, browser, or compiler on its own.  
-> 🚀 **The Antigravity Solution**: **Antigravity is the Agentic Harness** that equips models with safe, autonomous pair-programming superpowers:
-
-| Capability Layer | Without a Harness (Raw LLM) | With Antigravity (Agentic Harness) |
-| :--- | :--- | :--- |
-| **Action & Execution** | ❌ Can only write markdown text | ✅ Executes shell commands, lints, and builds live |
-| **Feedback & Verification** | ❌ Cannot test if code works | ✅ Runs tests, inspects compiler errors, auto-fixes |
-| **Workspace Context** | ❌ Single linear chat context | ✅ Parallel subagents, background tasks, and artifacts |
-| **Safety & Tool Control** | ❌ Unbounded or hallucinated commands | ✅ Sandboxed tool authorization & workspace rules |
+<div class="fundamental-gap-showcase">
+  <div class="gap-card-highlight">
+    <div class="gap-card-title">💡 The Fundamental Gap</div>
+    <div class="gap-card-desc">An LLM has powerful reasoning capabilities, but cannot touch your terminal, filesystem, browser, or compiler on its own.</div>
+  </div>
+  <div class="solution-card-highlight">
+    <div class="gap-card-title">🚀 The Antigravity Solution</div>
+    <div class="gap-card-desc"><strong>Antigravity is the Agentic Harness</strong> that equips models with safe, autonomous pair-programming superpowers.</div>
+  </div>
+</div>
 
 ---
 type: standard
