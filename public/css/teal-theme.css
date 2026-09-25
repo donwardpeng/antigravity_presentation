@@ -13,37 +13,42 @@
   --theme-teal-heading: #ffffff;
 }
 
-body, html, main, .download-page {
+.download-page {
   background: linear-gradient(145deg, var(--theme-teal-bg-dark) 0%, var(--theme-teal-bg-mid) 50%, var(--theme-teal-bg-accent) 100%) !important;
   color: var(--theme-teal-text-main) !important;
   min-height: 100vh;
 }
 
-.header {
+.download-page .header {
   background: rgba(4, 27, 33, 0.85) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   border-bottom: 1px solid rgba(0, 206, 209, 0.2) !important;
 }
 
-.header a, .header button, .button-nav, .logo-link {
+.download-page .header a, .download-page .header button, .download-page .button-nav, .download-page .logo-link {
   color: var(--theme-teal-text-main) !important;
 }
 
-.button-nav:hover {
+.download-page .button-nav:hover {
   color: #a7ffeb !important;
   background: rgba(0, 191, 165, 0.15) !important;
 }
 
-h1, h2, h3, h4, h5, h6, .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6, .section-title, .standalone-title, .extension-name {
+.download-page h1, .download-page h2, .download-page h3, .download-page h4, .download-page h5, .download-page h6,
+.download-page .heading-1, .download-page .heading-2, .download-page .heading-3, .download-page .heading-4,
+.download-page .heading-5, .download-page .heading-6, .download-page .section-title, .download-page .standalone-title,
+.download-page .extension-name {
   color: var(--theme-teal-heading) !important;
 }
 
-p, .body, .caption, .section-description, .extension-description, .standalone-description {
+.download-page p, .download-page .body, .download-page .caption, .download-page .section-description,
+.download-page .extension-description, .download-page .standalone-description {
   color: var(--theme-teal-text-muted) !important;
 }
 
-.extension-item, .standalone-ide-wrapper, .os-platform-container, .code-container {
+.download-page .extension-item, .download-page .standalone-ide-wrapper,
+.download-page .os-platform-container, .download-page .code-container {
   background: var(--theme-teal-card-bg) !important;
   border: 1px solid var(--theme-teal-card-border) !important;
   backdrop-filter: blur(12px) !important;
@@ -53,13 +58,13 @@ p, .body, .caption, .section-description, .extension-description, .standalone-de
   transition: all 0.3s ease !important;
 }
 
-.extension-item:hover, .standalone-ide-wrapper:hover {
+.download-page .extension-item:hover, .download-page .standalone-ide-wrapper:hover {
   border-color: rgba(0, 230, 118, 0.5) !important;
   box-shadow: 0 12px 40px rgba(0, 230, 118, 0.2) !important;
   transform: translateY(-2px);
 }
 
-.button-primary, .download-button {
+.download-page .button-primary, .download-page .download-button {
   background: linear-gradient(135deg, #00bfa5 0%, #00897b 100%) !important;
   color: #ffffff !important;
   border: none !important;
@@ -67,61 +72,62 @@ p, .body, .caption, .section-description, .extension-description, .standalone-de
   font-weight: 500 !important;
 }
 
-.button-primary:hover, .download-button:hover {
+.download-page .button-primary:hover, .download-page .download-button:hover {
   background: linear-gradient(135deg, #00e676 0%, #00bfa5 100%) !important;
   box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5) !important;
   transform: translateY(-1px);
 }
 
-.button-secondary {
+.download-page .button-secondary {
   background: rgba(0, 191, 165, 0.12) !important;
   color: #a7ffeb !important;
   border: 1px solid rgba(0, 191, 165, 0.35) !important;
   backdrop-filter: blur(8px) !important;
 }
 
-.button-secondary:hover {
+.download-page .button-secondary:hover {
   background: rgba(0, 191, 165, 0.25) !important;
   color: #ffffff !important;
   border-color: #00e676 !important;
 }
 
-.code-container {
+.download-page .code-container {
   background: #021217 !important;
   border: 1px solid #005662 !important;
 }
 
-.code-container code, .code-container pre {
+.download-page .code-container code, .download-page .code-container pre {
   color: #a7ffeb !important;
 }
 
-.nav-version-chip {
+.download-page .nav-version-chip {
   background: rgba(0, 191, 165, 0.2) !important;
   color: #a7ffeb !important;
   border: 1px solid rgba(0, 191, 165, 0.4) !important;
 }
 
 /* Footer styling */
-footer, .antigravity-footer-wrapper, .footer {
+.download-page footer, .download-page .antigravity-footer-wrapper, .download-page .footer {
   background: #020f13 !important;
   border-top: 1px solid rgba(0, 206, 209, 0.2) !important;
   color: var(--theme-teal-text-muted) !important;
 }
 
-footer a, .footer a {
+.download-page footer a, .download-page .footer a {
   color: #a7ffeb !important;
 }
 
-footer a:hover, .footer a:hover {
+.download-page footer a:hover, .download-page .footer a:hover {
   color: #00e676 !important;
 }
 
 /* Tab button styling */
-[data-os-tab], button {
+.download-page [data-os-tab], .download-page button {
   transition: all 0.2s ease;
 }
 
-button.active, button.selected {
+.download-page button.active, .download-page button.selected {
   background: #00bfa5 !important;
   color: #ffffff !important;
 }
+

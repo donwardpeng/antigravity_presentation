@@ -38,35 +38,41 @@
 }
 
 .light-mode {
+  --google-blue: #1a73e8;
+  --google-blue-hover: #1557b0;
+  --google-green: #1e8e3e;
   --bg-primary: #f8fafc;
   --bg-secondary: #f1f5f9;
   --bg-card: #ffffff;
-  --bg-card-border: rgba(0, 0, 0, 0.08);
+  --bg-card-border: rgba(0, 0, 0, 0.1);
   --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
   
-  --toolbar-bg: rgba(255, 255, 255, 0.9);
-  --header-bg: rgba(255, 255, 255, 0.85);
+  --toolbar-bg: rgba(255, 255, 255, 0.95);
+  --header-bg: rgba(255, 255, 255, 0.92);
   --terminal-bg: #1e293b;
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 25px rgba(66, 133, 244, 0.15);
+  --shadow-glow: 0 0 25px rgba(26, 115, 232, 0.15);
 
   --btn-hover-bg: rgba(0, 0, 0, 0.06);
   --btn-subtle-bg: rgba(0, 0, 0, 0.04);
 }
 
 .dark-mode {
+  --google-blue: #8ab4f8;
+  --google-blue-hover: #aecbfa;
+  --google-green: #81c995;
   --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --bg-card: rgba(30, 41, 59, 0.85);
   --bg-card-border: rgba(255, 255, 255, 0.12);
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   
-  --toolbar-bg: rgba(15, 23, 42, 0.9);
-  --header-bg: rgba(15, 23, 42, 0.8);
+  --toolbar-bg: rgba(15, 23, 42, 0.95);
+  --header-bg: rgba(15, 23, 42, 0.85);
   --terminal-bg: #0b0f19;
   --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 25px rgba(66, 133, 244, 0.25);
@@ -405,6 +411,27 @@ body {
   line-height: 1.5;
 }
 
+/* Inline code badges */
+.slide-card code:not(pre code) {
+  font-family: var(--font-code);
+  font-size: 0.88em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.light-mode .slide-card code:not(pre code) {
+  background: #e8f0fe;
+  color: #1a73e8;
+  border: 1px solid rgba(26, 115, 232, 0.25);
+}
+
+.dark-mode .slide-card code:not(pre code) {
+  background: rgba(138, 180, 248, 0.12);
+  color: #8ab4f8;
+  border: 1px solid rgba(138, 180, 248, 0.3);
+}
+
 .slide-card blockquote {
   border-left: 4px solid var(--google-blue);
   background: rgba(66, 133, 244, 0.08);
@@ -413,6 +440,12 @@ body {
   margin: 20px 0;
   font-style: normal;
   color: var(--text-primary);
+}
+
+.light-mode .slide-card blockquote {
+  background: #f1f6fd;
+  border-left-color: #1a73e8;
+  color: #1e293b;
 }
 
 /* Tables inside slides */
