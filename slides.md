@@ -201,11 +201,6 @@ notes: Keep this slide crisp. Highlight the 3 roles: LLM is the engine (intellig
       </div>
     </div>
     <div class="triad-analogy">🏎️ <em>The Engine (Raw Power)</em></div>
-    <ul class="triad-list">
-      <li>Natural language comprehension & code generation</li>
-      <li>Trained on billions of tokens, ASTs, and architectures</li>
-      <li>Stateless: generates text, but cannot execute commands</li>
-    </ul>
     <div class="triad-gap-box">
       <strong>Limitation:</strong> "Brain in a jar" — no terminal, no filesystem access.
     </div>
@@ -220,11 +215,6 @@ notes: Keep this slide crisp. Highlight the 3 roles: LLM is the engine (intellig
       </div>
     </div>
     <div class="triad-analogy">🧭 <em>The Driver (Navigation & Will)</em></div>
-    <ul class="triad-list">
-      <li>Breaks high-level goals into multi-step engineering plans</li>
-      <li>Drives the iterative <em>ReAct</em> loop (Reason ➔ Act ➔ Observe)</li>
-      <li>Evaluates test outputs & self-corrects on errors</li>
-    </ul>
     <div class="triad-gap-box">
       <strong>Limitation:</strong> Pure logic — requires an OS environment to touch code.
     </div>
@@ -239,11 +229,6 @@ notes: Keep this slide crisp. Highlight the 3 roles: LLM is the engine (intellig
       </div>
     </div>
     <div class="triad-analogy">🛡️ <em>The Car, Controls & Hands</em></div>
-    <ul class="triad-list">
-      <li><strong>Hands:</strong> Executes shell commands, edits files & operates browser</li>
-      <li><strong>Senses:</strong> Feeds compiler errors, test logs & diffs back to agent</li>
-      <li><strong>Safety:</strong> Sandboxing, permission grants & human-in-the-loop gates</li>
-    </ul>
     <div class="triad-gap-box">
       <strong>The Bridge:</strong> Connects AI intelligence directly to your real codebase.
     </div>
