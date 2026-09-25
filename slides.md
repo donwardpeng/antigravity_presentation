@@ -107,6 +107,16 @@ notes: Pause here and look at the audience. Ask them: 'Before we show you the co
 
 ---
 type: standard
+title: So what is a Harness?
+badge: CORE QUESTION 🤔
+notes: Ask the audience: 'So what is a Harness?' Give a brief pause to let attendees reflect before transitioning into the paradigm shift from chatbots to autonomous agentic harnesses.
+
+<div class="question-container">
+  <h1 class="question-title">So what is a Harness?</h1>
+</div>
+
+---
+type: standard
 title: The Paradigm Shift: Chatbots vs. Agents
 badge: EVOLUTION OF AI
 notes: Walk through the 3 phases of AI evolution: Chatbots (passive text) -> Copilots (assistive inline) -> Autonomous Agents (active execution). Explain the fundamental missing piece: LLMs have reasoning brains, but they lack hands and safety guardrails. That's why an agentic harness like Antigravity is required.

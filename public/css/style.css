@@ -2059,3 +2059,34 @@ pre[class*="language-"] {
   color: var(--text-secondary);
   line-height: 1.4;
 }
+
+/* --------------------------------------------------------------------------
+   Question Slide / Single-Prompt Slide Component
+   -------------------------------------------------------------------------- */
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px;
+  text-align: center;
+  width: 100%;
+  margin: auto 0;
+  padding: 40px 20px;
+}
+
+.question-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .question-title {
+    font-size: 2.6rem;
+  }
+}
+
