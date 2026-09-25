@@ -68,6 +68,19 @@ notes: Introduce tonight's speakers from GDG on Campus University of Windsor. Gi
 
 ---
 type: standard
+title: Our Goal Today
+badge: TODAY'S MISSION 🎯
+notes: Introduce our two primary objectives for today's session: 1) Understand what Google Antigravity is and why developers should care, and 2) Get you started with hands-on agentic workflows.
+
+# Our Goal Today
+
+<ul class="goal-list">
+  <li>What is Antigravity and why should you care?</li>
+  <li>Get you started with it.</li>
+</ul>
+
+---
+type: standard
 title: What is Antigravity?
 badge: AUDIENCE QUESTION 🤔
 notes: Pause here and look at the audience. Ask them: 'Before we show you the code, what do you think Google Antigravity is?' Let 2-3 people answer or guess. Highlight that almost everyone expects a chatbot or copilot autocomplete, but it's fundamentally an autonomous agentic harness.
