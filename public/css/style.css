@@ -388,8 +388,21 @@ body {
 .slide-card li {
   font-size: 1.15rem;
   color: var(--text-primary);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   line-height: 1.6;
+}
+
+.slide-card li ul {
+  margin-left: 24px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.slide-card li li {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
 
 .slide-card blockquote {

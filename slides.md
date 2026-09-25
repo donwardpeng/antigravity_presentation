@@ -451,14 +451,14 @@ notes: Introduce slash commands for planning and deep autonomous execution. 1) /
 # Slash Commands: Planning & Autonomy
 ### High-Leverage Commands for Deep Engineering Workflows
 
-- **`/plan`** — **Architectural Planning Mode**  
-  Prompts the agent to research your codebase, design a step-by-step implementation strategy, and pause for your review before touching any code.
+- **`/plan`** — **Architectural Planning Mode**
+  - Researches codebase and drafts step-by-step strategy before modifying code.
 
-- **`/goal`** — **Autonomous Mission Mode**  
-  Instructs the agent to work thoroughly and persistently without stopping until a complex objective is 100% completed, self-correcting through roadblocks.
+- **`/goal`** — **Autonomous Mission Mode**
+  - Pursues complex objectives end-to-end with persistent self-correction until complete.
 
-- **`/grill-me`** — **Requirements Discovery Interview**  
-  The agent conducts an interactive interview with you, asking targeted clarifying questions to eliminate ambiguity and nail down design decisions.
+- **`/grill-me`** — **Requirements Discovery Interview**
+  - Conducts an interactive interview to clarify requirements and lock in design choices.
 
 > 💡 **Best Practice:** Start complex refactors with **`/plan`** or **`/grill-me`**, then execute with **`/goal`**.
 
@@ -471,14 +471,14 @@ notes: Cover workflow automation and persistent memory. 1) /schedule manages bac
 # Slash Commands: Workflow & Memory
 ### Continuous Monitoring, Rule Persistence & Code Review
 
-- **`/schedule`** — **Background Schedulers & Timers**  
-  Schedules a recurring cron job (e.g. periodic health checks, build monitoring) or sets a delayed reminder timer that runs in the background.
+- **`/schedule`** — **Background Schedulers & Timers**
+  - Runs recurring cron jobs or sets background reminder timers.
 
-- **`/learn`** — **Persistent Repository Knowledge**  
-  Captures a developer correction, architectural pattern, or team convention and persists it as a permanent rule in `.agents/rules/`.
+- **`/learn`** — **Persistent Repository Knowledge**
+  - Saves developer corrections and conventions as permanent rules in `.agents/rules/`.
 
-- **`/review`** — **Automated Code Review & Security Audit**  
-  Thoroughly audits all uncommitted git changes for regression risks, security vulnerabilities, edge cases, and code style compliance.
+- **`/review`** — **Automated Code Review & Security Audit**
+  - Audits uncommitted changes for regression risks, edge cases, and security vulnerabilities.
 
 > 💡 **Best Practice:** Whenever you correct the agent's behavior, run **`/learn`** so it never makes the same mistake again!
 
@@ -491,14 +491,14 @@ notes: Cover test validation, context management, and discovery. 1) /test automa
 # Slash Commands: Quality & Context
 ### Test Execution, Token Optimization & Command Hub
 
-- **`/test`** — **Automated Validation Matrix**  
-  Discovers and executes local unit and integration tests, reporting pass/fail breakdowns and feeding compiler failures into the self-correction loop.
+- **`/test`** — **Automated Validation Matrix**
+  - Discovers and runs local test suites, feeding failures into self-correction.
 
-- **`/compact`** — **Context Window Optimizer**  
-  Summarizes conversation history to reclaim token budget during long pairing sessions while preserving critical task context and decisions.
+- **`/compact`** — **Context Window Optimizer**
+  - Summarizes conversation history to reclaim tokens while preserving critical context.
 
-- **`/help`** — **Command & Skill Directory**  
-  Lists all available built-in slash commands, active skills, subagents, and environment configuration options.
+- **`/help`** — **Command & Skill Directory**
+  - Displays directory of available slash commands, active skills, and config options.
 
 > ⌨️ **Quick Tip:** Type **`@`** at any prompt to attach files, symbols, past conversations, or rules directly into any slash command!
 
