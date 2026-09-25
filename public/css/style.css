@@ -1740,10 +1740,10 @@ pre[class*="language-"] {
 .react-card.step-reflection .react-step-indicator { color: var(--google-green); }
 
 .react-title {
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .react-desc {
@@ -1756,11 +1756,12 @@ pre[class*="language-"] {
 .react-example-box {
   background: var(--bg-secondary);
   border-radius: var(--radius-sm);
-  padding: 8px 10px;
+  padding: 12px 14px;
   font-family: var(--font-code);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
   color: var(--text-primary);
-  margin-top: auto;
+  margin-top: 10px;
   border-left: 3px solid var(--text-muted);
 }
 

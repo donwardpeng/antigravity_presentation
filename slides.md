@@ -265,7 +265,6 @@ notes: Explain the ReAct framework (Reasoning + Acting, originally published by 
   <div class="react-card step-thought">
     <span class="react-step-indicator">Step 1 • Cognition</span>
     <h4 class="react-title">💭 Thought (Reason)</h4>
-    <p class="react-desc">The agent inspects current workspace state, reads user goals, and plans the precise next step.</p>
     <div class="react-example-box">
       <em>"Test suite failed on AuthToken. I need to grep for the token refresh logic."</em>
     </div>
@@ -274,7 +273,6 @@ notes: Explain the ReAct framework (Reasoning + Acting, originally published by 
   <div class="react-card step-action">
     <span class="react-step-indicator">Step 2 • Execution</span>
     <h4 class="react-title">🛠️ Action (Tool Call)</h4>
-    <p class="react-desc">The agent invokes an Antigravity tool with structured parameters (terminal, edit, browser, search).</p>
     <div class="react-example-box">
       <code>grep_search("refreshToken", "./src/auth")</code>
     </div>
@@ -283,7 +281,6 @@ notes: Explain the ReAct framework (Reasoning + Acting, originally published by 
   <div class="react-card step-observation">
     <span class="react-step-indicator">Step 3 • Ground Truth</span>
     <h4 class="react-title">👁️ Observation (Sense)</h4>
-    <p class="react-desc">Antigravity executes the tool safely on your OS and feeds exact stdout/stderr back into the model.</p>
     <div class="react-example-box">
       <code>Found 2 matches in authService.ts:42 and tokenManager.ts:18</code>
     </div>
@@ -292,7 +289,6 @@ notes: Explain the ReAct framework (Reasoning + Acting, originally published by 
   <div class="react-card step-reflection">
     <span class="react-step-indicator">Step 4 • Adaptation</span>
     <h4 class="react-title">🔄 Reflection (Critique)</h4>
-    <p class="react-desc">The agent evaluates if the outcome advances the goal. If errors exist, it course-corrects dynamically.</p>
     <div class="react-example-box">
       <em>"Line 42 has a typo in expiry math. Let me apply a targeted diff and re-run tests."</em>
     </div>
