@@ -58,17 +58,16 @@ notes: Take a quick moment to gauge the room! Ask for a show of hands across bac
 type: standard
 title: Today's Story
 badge: AGENDA 🗺️
-notes: Walk quickly through our 4-act storyline: 1) The big shift in AI and why it matters (productivity, tokenomics, and the rise of the harness), 2) Why learning one harness transfers everywhere (Skills, Agents, MCP, A2A) and why we're spotlighting Antigravity here at a Google conference, 3) How to get started with Antigravity (concepts, surfaces, models, and a live demo), and 4) Wait — what about costs? Let's unpack pricing and practical options.
+notes: Walk quickly through our 5-act storyline: 1) The big shift in AI and why it matters (productivity, tokenomics, and the rise of the harness), 2) Why learning one harness transfers everywhere (Skills, Agents, MCP, A2A) and why we're spotlighting Antigravity here at a Google conference, 3) How to get started with Antigravity (concepts, surfaces, models, and a live demo), 4) Wait — what about costs? Let's unpack pricing and practical options, and 5) Agents in the Enterprise — Google's Enterprise Agent Stack (Governance, Security & Enablement) and why knowing it helps your career.
 
 # 🗺️ Today's Story
-### Four Chapters to Take You from AI Shift to Hands-On Impact
+### Five Chapters from AI Shift to Enterprise Readiness
 
 <div class="story-roadmap-grid">
   <div class="roadmap-card act-1">
     <div class="roadmap-num">1</div>
     <div class="roadmap-body">
       <h4>🔄 The Shift in AI & Why It Matters</h4>
-      <p>Chatbots ➔ Assistants ➔ Agents — productivity multipliers, tokenomics & why the harness is king.</p>
     </div>
   </div>
 
@@ -76,7 +75,6 @@ notes: Walk quickly through our 4-act storyline: 1) The big shift in AI and why 
     <div class="roadmap-num">2</div>
     <div class="roadmap-body">
       <h4>🔁 One Harness Transfers Everywhere</h4>
-      <p>Learn Skills, Agents, MCP & A2A once — and let's explore Google Antigravity!</p>
     </div>
   </div>
 
@@ -84,7 +82,6 @@ notes: Walk quickly through our 4-act storyline: 1) The big shift in AI and why 
     <div class="roadmap-num">3</div>
     <div class="roadmap-body">
       <h4>🚀 Getting Started with Antigravity</h4>
-      <p>Core concepts, developer surfaces, multi-model freedom & a live demo.</p>
     </div>
   </div>
 
@@ -92,9 +89,28 @@ notes: Walk quickly through our 4-act storyline: 1) The big shift in AI and why 
     <div class="roadmap-num">4</div>
     <div class="roadmap-body">
       <h4>💰 Wait... What About Costs?</h4>
-      <p>Practical options from Free & Pro plans to Ultra & Enterprise Cloud.</p>
     </div>
   </div>
+
+  <div class="roadmap-card act-5">
+    <div class="roadmap-num">5</div>
+    <div class="roadmap-body">
+      <h4>🏢 Agents in the Enterprise</h4>
+    </div>
+  </div>
+</div>
+
+---
+type: standard
+title: Part 1: The Shift in AI & Why It Matters
+badge: PART 1 OF 5 🔄
+notes: Section 1 opener! Pause for a beat to transition cleanly into Part 1 of our story: the big shift in AI and why it matters to every developer in this room.
+
+<div class="section-divider act-1">
+  <span class="section-number-badge">Part 1 of 5</span>
+  <div class="section-divider-emoji">🔄</div>
+  <h1 class="section-divider-title">The Shift in AI & Why It Matters</h1>
+  <div class="section-divider-bar"></div>
 </div>
 
 ---
@@ -104,7 +120,6 @@ badge: ACT 1 • THE AI SHIFT 🔄
 notes: Open Act 1 by framing the tectonic shift in AI over the last few years. Phase 1: Chatbots — "Brain in a Jar", text in / text out, humans copy-pasting code back and forth. Phase 2: Assistants — inline copilot autocomplete inside the editor, helpful, but the human still drives every keystroke and runs every command. Phase 3: Agents — autonomous builders that plan multi-step work, execute tools, observe errors, and self-correct until done.
 
 # 🔄 The Shift in AI
-### From Passive Chatbots to Autonomous Engineering Agents
 
 <div class="evolution-stepper">
   <div class="step-card">
@@ -113,8 +128,7 @@ notes: Open Act 1 by framing the tectonic shift in AI over the last few years. P
     <p class="step-tagline">"Brain in a Jar"</p>
     <ul>
       <li>📝 Text in ➔ Text out</li>
-      <li>📋 Human copy-pastes everything</li>
-      <li>🚫 Zero access to files or terminal</li>
+      <li>📋 Copy-paste workflow</li>
     </ul>
   </div>
 
@@ -123,9 +137,8 @@ notes: Open Act 1 by framing the tectonic shift in AI over the last few years. P
     <h4>Assistants</h4>
     <p class="step-tagline">"Smart Copilot"</p>
     <ul>
-      <li>✨ Inline ghost-text suggestions</li>
-      <li>📄 Context limited to open tabs</li>
-      <li>🧑‍💻 Human still drives every step</li>
+      <li>✨ Inline suggestions</li>
+      <li>🧑‍💻 Human drives every step</li>
     </ul>
   </div>
 
@@ -134,14 +147,11 @@ notes: Open Act 1 by framing the tectonic shift in AI over the last few years. P
     <h4>Agents</h4>
     <p class="step-tagline">"Autonomous Builder"</p>
     <ul>
-      <li>🗺️ Plans multi-step workflows</li>
-      <li>🛠️ Runs shell, files & browser tools</li>
-      <li>🔁 Observes output & self-corrects</li>
+      <li>🛠️ Runs tools, shell & browser</li>
+      <li>🔁 Plans & self-corrects</li>
     </ul>
   </div>
 </div>
-
-> 🎯 **The Big Shift:** We're moving from *typing faster* to *orchestrating outcomes*.
 
 ---
 type: standard
@@ -149,62 +159,64 @@ title: So What? Why This Shift Matters
 badge: ACT 1 • SO WHAT? 💡
 notes: Pause and ask: "Okay, we went from Chatbots to Assistants to Agents — so what?" Hit the three critical takeaways from the storyline: 1) Massive multiplier in productivity — developers orchestrate whole features instead of individual lines. 2) Costs grow fast — welcome to Tokenomics! Agentic loops call models repeatedly with big context windows. 3) Because of both productivity and cost, the harness/orchestrator around the model becomes just as important as the model itself!
 
-# 💡 So What? Why Does This Matter?
-### Three Real-World Consequences Every Developer Feels Immediately
+# 💡 So What?
 
 <div class="impact-grid">
   <div class="impact-card impact-blue">
     <div class="impact-emoji">⚡</div>
-    <span class="impact-pill">1 • Speed & Scale</span>
     <h4>Productivity Multiplier</h4>
-    <p>One engineer can research, refactor, test, and ship full features in parallel — shifting leverage from <strong>lines typed</strong> to <strong>problems solved</strong>.</p>
+    <ul>
+      <li>Parallel feature delivery</li>
+      <li>Outcomes over keystrokes</li>
+    </ul>
   </div>
 
   <div class="impact-card impact-orange">
     <div class="impact-emoji">💸</div>
-    <span class="impact-pill">2 • Tokenomics</span>
-    <h4>Costs Grow Quickly</h4>
-    <p>Multi-step reasoning, tool calls, and long context windows consume <strong>10×–100× more tokens</strong> than single-shot chatbot prompts.</p>
+    <h4>Costs Grow ➔ Tokenomics</h4>
+    <ul>
+      <li>10×–100× more tokens</li>
+      <li>Loops & context add up fast</li>
+    </ul>
   </div>
 
   <div class="impact-card impact-yellow">
     <div class="impact-emoji">🛡️</div>
-    <span class="impact-pill">3 • Architecture</span>
     <h4>The Harness Matters</h4>
-    <p>Raw models are smart, but the <strong>harness / orchestrator</strong> controls context, tools, safety, model routing, and token efficiency.</p>
+    <ul>
+      <li>Controls context & tools</li>
+      <li>Drives quality & efficiency</li>
+    </ul>
   </div>
 </div>
 
-> 🔥 **Bottom Line:** Great results aren't just about picking the biggest model — they depend on how well your **harness** orchestrates it!
-
 ---
 type: standard
-title: Tokenomics: Gemini Release Frequency & Pricing
+title: Tokenomics: Gemini 4 Cadence & Pricing
 badge: ACT 1 • TOKENOMICS 💸
-notes: Zoom in on #2 ("costs grow -> tokenomics -> look at Gemini model release frequency & pricing"). Point out two realities: First, model release cadence is blistering — Google ships rapid updates across 2.5, 3.x, and 4.x generations (Pro, Flash, Flash-Lite, and frontier reasoning models) with fast deprecation cycles and intro pricing windows. Second, pricing spans a 20x–40x range per million tokens — AND reasoning/thinking tokens are billed as output! So using a frontier model for grep searches burns budget fast, whereas smart routing saves a fortune.
+notes: Zoom in on #2 ("costs grow -> tokenomics -> look at Gemini model release frequency & pricing") using the real Gemini 4 lineup! Point out the blistering cadence: 4 models shipped in 7 weeks — Argon (Sep 30), Carbon (Nov 10), Hydrogen (Nov 12), and Neon (Nov 18, literally yesterday!). Highlight the economics: Hydrogen starts at $1.50/$7.50 per 1M tokens, Neon is $3/$15, and Argon/Carbon intro pricing ($2/$10) doubles to $4/$20 on Dec 1, 2026 (~2.7x range across Gemini 4). Crucially, internal thinking tokens bill as output, and context caching cuts repeated input by 95% — so harness caching and routing directly control your bill.
 
-# 💸 Tokenomics: Cadence & Pricing
-### Look at Gemini Model Release Frequency & Token Economics
+# 💸 Gemini 4 Tokenomics
 
 <div class="cadence-banner">
   <div class="cadence-item">
     <span class="cadence-chip">🚄 Cadence</span>
-    <span>Rapid drops: <strong>2.5 ➔ 3.x ➔ 4.x</strong> (quarterly & monthly iterations + fast deprecations)</span>
+    <span><strong>4 models in 7 weeks</strong> — 3 in 9 days (Sep 30 ➔ Nov 18, 2026)</span>
   </div>
   <div class="cadence-item">
-    <span class="cadence-chip">🧠 Watch Out</span>
-    <span>Internal <strong>thinking tokens</strong> count as billable output!</span>
+    <span class="cadence-chip">🧠 Billing</span>
+    <span>Thinking tokens = output • <strong>95% off</strong> cached input</span>
   </div>
 </div>
 
-| 🎯 Tier | 🤖 Example Gemini Models | 📥 Input / 1M | 📤 Output / 1M | ⚡ Sweet Spot |
+| 🤖 Gemini 4 Model | 📅 Released | 📥 Input / 1M | 📤 Output / 1M | ⚡ Best For |
 | :--- | :--- | :--- | :--- | :--- |
-| **🪶 Flash-Lite** | Gemini 2.5 / 3.1 / 3.5 Flash-Lite | ~$0.10 – $0.30 | ~$0.40 – $2.50 | High-volume triage & classification |
-| **⚡ Flash** | Gemini 3.6 / 3.7 / 3.8 Flash | ~$0.75 – $1.50 | ~$3.75 – $7.50 | Fast edits, searches & subagents |
-| **🧠 Pro / Everyday** | Gemini 3.1 Pro / 4 Hydrogen | ~$1.50 – $2.00 | ~$7.50 – $12.00 | Everyday full-stack engineering |
-| **🔥 Frontier** | Gemini 4 Neon / Carbon / Argon | ~$2.00 – $4.00 | ~$10.00 – $20.00 | Deep architecture & tough debugging |
+| **⚙️ Argon** | Sep 30, 2026 | $2.00 ➔ $4.00\* | $10.00 ➔ $20.00\* | Standard software engineering |
+| **🔥 Carbon** | Nov 10, 2026 | $2.00 ➔ $4.00\* | $10.00 ➔ $20.00\* | Flagship frontier reasoning |
+| **⚡ Hydrogen** | Nov 12, 2026 | $1.50 | $7.50 | Fast everyday agentic work |
+| **✨ Neon** | Nov 18, 2026 | $3.00 | $15.00 | Fast deep reasoning (1M ctx) |
 
-> 💡 **Tokenomics Takeaway:** Prices vary **20×–40×** across tiers — a smart harness routes routine steps to fast models and saves frontier reasoning for hard problems!
+> 💡 **Tokenomics Takeaway:** Gemini 4 spans **~2.7×** (`$7.50`–`$20`/1M out) & \*intro rates double **Dec 1** — **95% context caching** + smart model routing keep agent loops affordable!
 
 ---
 type: standard
@@ -264,6 +276,19 @@ notes: Wrap up Act 1 with #3 ("The harness/orchestrator becomes important"). Use
 
 ---
 type: standard
+title: Part 2: One Harness Transfers Everywhere
+badge: PART 2 OF 5 🔁
+notes: Section 2 opener! Transition from why the harness matters into why learning ONE harness deeply transfers across the entire AI developer ecosystem.
+
+<div class="section-divider act-2">
+  <span class="section-number-badge">Part 2 of 5</span>
+  <div class="section-divider-emoji">🔁</div>
+  <h1 class="section-divider-title">One Harness Transfers Everywhere</h1>
+  <div class="section-divider-bar"></div>
+</div>
+
+---
+type: standard
 title: Learn One Harness, Transfer Everywhere
 badge: ACT 2 • TRANSFERABILITY 🔁
 notes: Transition into Act 2! A common worry developers have is: "Tools change every 3 months — what if I bet on the wrong one?" Reassure them: learning ONE agentic harness deeply transfers directly to others! Point #1 under So What: the core building blocks — Skills, Agents, MCP, and A2A — are becoming shared open concepts across the whole ecosystem, with even more standards on the way.
@@ -315,6 +340,19 @@ notes: Hit Point #2 under Act 2's "So what?": Since we are at a Google conferenc
     <span class="demo-pill">🛠️ Built by Google DeepMind</span>
     <span class="demo-pill">⚡ Multi-Model & Multi-Surface</span>
   </div>
+</div>
+
+---
+type: standard
+title: Part 3: Getting Started with Antigravity
+badge: PART 3 OF 5 🚀
+notes: Section 3 opener! Now let's dive into how I got started with Google Antigravity — core concepts, developer surfaces, supported models, and a live demo.
+
+<div class="section-divider act-3">
+  <span class="section-number-badge">Part 3 of 5</span>
+  <div class="section-divider-emoji">🚀</div>
+  <h1 class="section-divider-title">Getting Started with Antigravity</h1>
+  <div class="section-divider-bar"></div>
 </div>
 
 ---
@@ -460,53 +498,57 @@ notes: Move to #2 under Getting Started: Antigravity's surfaces! Show how Antigr
 type: standard
 title: Models Supported: Multi-Model Freedom
 badge: ACT 3 • MODELS 🧠
-notes: Move to #3 under Getting Started: Models supported! Emphasize that Antigravity is NOT locked to a single model — you can pick the right model and reasoning effort for the job: Google Gemini (including Gemini 4 series & 3.x Pro/Flash with tunable effort levels), Frontier partner models (Claude Sonnet 4.6 & Opus 4.6 Thinking), and Open-Weight models (GPT-OSS 120B). Connect this right back to Act 1's Tokenomics!
+notes: Move to #3 under Getting Started: Models supported! Verified against antigravity.google/docs/models. Highlight 3 big pillars: 1) Google Gemini 4 (Neon, Carbon, Argon, Hydrogen) with tunable thinking levels (Low/Med/High/Extra), plus Gemini 3.8 Flash (even on Free!). 2) Orchestrator mode — a killer Antigravity feature that automatically pairs a Gemini 4 planner (Neon/Carbon/Argon) with fast Gemini 4 Hydrogen execution in a single turn. 3) Partner models: Anthropic Claude Sonnet 5.5 & Opus 5.5 (Thinking). Note on OpenAI: proprietary OpenAI models aren't in Antigravity; OpenAI's open-weight GPT-OSS 120B was included on Free/Pro/Ultra but is actively being deprecated (Nov 18, 2026). Bonus: Nano Banana 2 powers built-in image & diagram generation.
 
 # 🧠 Step 3: Models Supported
-### Multi-Model Freedom — Pick the Right Brain for Every Task
+### Multi-Model Freedom — Verified Against Official Antigravity Docs
 
 <div class="models-grid">
   <div class="model-card family-google">
     <h3 class="model-family-title">🔵 Google Gemini</h3>
-    <span class="model-family-subtitle">Tunable Reasoning Effort</span>
+    <span class="model-family-subtitle">Low • Med • High • Extra Thinking</span>
     <div class="model-item">
-      <span class="model-name">🔥 Gemini 4 Series (Neon / Carbon / Hydrogen)</span>
-      <span class="model-tag">Frontier reasoning, deep planning & speed</span>
+      <span class="model-name">✨ Gemini 4 Neon / Carbon / Argon</span>
+      <span class="model-tag">Frontier reasoning & architecture</span>
     </div>
     <div class="model-item">
-      <span class="model-name">🧠 Gemini 3.1 Pro (High / Low)</span>
-      <span class="model-tag">Whole-codebase architecture & logic</span>
+      <span class="model-name">⚡ Gemini 4 Hydrogen</span>
+      <span class="model-tag">Fast everyday coding & execution</span>
     </div>
     <div class="model-item">
-      <span class="model-name">⚡ Gemini 3.8 / 3.7 Flash</span>
-      <span class="model-tag">Fast edits, subagents & high-throughput loops</span>
+      <span class="model-name">🪶 Gemini 3.8 Flash</span>
+      <span class="model-tag">Fast & available on all plans (incl. Free)</span>
     </div>
   </div>
 
   <div class="model-card family-frontier">
-    <h3 class="model-family-title">🟠 Frontier Partners</h3>
-    <span class="model-family-subtitle">Extended Thinking Models</span>
+    <h3 class="model-family-title">🎛️ Orchestrator Mode</h3>
+    <span class="model-family-subtitle">Auto Plan + Fast Execute</span>
     <div class="model-item">
-      <span class="model-name">✨ Claude Sonnet 4.6 (Thinking)</span>
-      <span class="model-tag">Top-tier day-to-day coding & debugging</span>
+      <span class="model-name">🧭 Orchestrator (Neon / Carbon / Argon)</span>
+      <span class="model-tag">Plans with Gemini 4, executes with Hydrogen</span>
     </div>
     <div class="model-item">
-      <span class="model-name">🏗️ Claude Opus 4.6 (Thinking)</span>
-      <span class="model-tag">Complex synthesis & heavy refactoring</span>
+      <span class="model-name">🎨 Built-in: Nano Banana 2</span>
+      <span class="model-tag">Auto image, UI mockup & diagram generation</span>
     </div>
   </div>
 
   <div class="model-card family-open">
-    <h3 class="model-family-title">🟡 Open-Weight</h3>
-    <span class="model-family-subtitle">Transparent & Flexible</span>
+    <h3 class="model-family-title">🟠 Partner Models</h3>
+    <span class="model-family-subtitle">Anthropic (Pro / Ultra / Enterprise)</span>
     <div class="model-item">
-      <span class="model-name">🔓 GPT-OSS 120B (Medium)</span>
-      <span class="model-tag">120B open-weight model right in the harness</span>
+      <span class="model-name">✨ Claude Sonnet 5.5 (Thinking)</span>
+      <span class="model-tag">Fast partner coding & debugging</span>
+    </div>
+    <div class="model-item">
+      <span class="model-name">🏗️ Claude Opus 5.5 (Thinking)</span>
+      <span class="model-tag">Heavy architecture & deep synthesis</span>
     </div>
   </div>
 </div>
 
-> 💡 **Tokenomics Pro Tip:** Run **Flash** for quick searches & subagents, then switch to **Pro / Frontier** for tricky architecture decisions!
+> 💡 **Tokenomics Pro Tip:** Use **Orchestrator** for day-to-day builds — it automatically pairs deep Gemini 4 planning with fast Hydrogen execution!
 
 ---
 type: standard
@@ -555,16 +597,48 @@ notes: Give the audience a quick cheat-sheet of the everyday slash commands you 
 type: standard
 title: Live Demo Time!
 badge: ACT 3 • LIVE DEMO 🎬
-notes: Step 4 of Getting Started — Demo Time! Switch over to the live Antigravity Desktop App (Antigravity 2.0) and walk through: 1) Projects & workspace isolation, 2) Triggering an on-demand Skill and showing active MCP / Build with Google bundles, 3) Live Preview / Browser-in-the-Loop watching a real UI change, and 4) Switching models on the fly.
+notes: Demo time! Walk through three live demos: 1) How I generated this exact slide deck — starting from my handwritten storyline notes in Google Drive and moving seamlessly across the Standalone App -> Antigravity IDE -> VS Code. 2) Modify an HTML page inline live in front of the audience. 3) One more — your bonus / surprise demo!
 
-<div class="question-container">
-  <h1 class="question-title">🎬 Live Demo: Antigravity in Action!</h1>
-  <div class="demo-pills">
-    <span class="demo-pill">🗂️ Projects & Workspaces</span>
-    <span class="demo-pill">🎯 Skills & MCP Bundles</span>
-    <span class="demo-pill">🌐 Live Preview & Browser</span>
-    <span class="demo-pill">🧠 Model Switching</span>
+# 🎬 Live Demo: What We'll Build & Show
+
+<div class="impact-grid">
+  <div class="impact-card impact-blue">
+    <div class="impact-emoji">🖥️</div>
+    <h4>1. How I Generated This Deck</h4>
+    <ul>
+      <li>✍️ Written storyline ➔ live slides</li>
+      <li>🔁 Standalone App ➔ IDE ➔ VS Code</li>
+    </ul>
   </div>
+
+  <div class="impact-card impact-orange">
+    <div class="impact-emoji">🛠️</div>
+    <h4>2. Modify HTML Page Inline</h4>
+    <ul>
+      <li>⚡ Real-time inline edits</li>
+    </ul>
+  </div>
+
+  <div class="impact-card impact-yellow">
+    <div class="impact-emoji">🎁</div>
+    <h4>3. One More…</h4>
+    <ul>
+      <li>✨ Bonus live demo!</li>
+    </ul>
+  </div>
+</div>
+
+---
+type: standard
+title: Part 4: Wait... What About Costs?
+badge: PART 4 OF 5 💰
+notes: Section 4 opener! Now that everyone has seen Antigravity live, let's address the practical question on everyone's mind: Wait — what about costs?
+
+<div class="section-divider act-4">
+  <span class="section-number-badge">Part 4 of 5</span>
+  <div class="section-divider-emoji">💰</div>
+  <h1 class="section-divider-title">Wait… What About Costs?</h1>
+  <div class="section-divider-bar"></div>
 </div>
 
 ---
@@ -627,6 +701,111 @@ notes: Transition into Act 4 ("Wait -> what about costs?"). Now that everyone ha
 </div>
 
 > 💡 **Stretch Every Dollar:** Combine **`/compact`** + **Flash models** for routine steps + **Pro/Frontier** for hard problems!
+
+---
+type: standard
+title: Part 5: Agents in the Enterprise
+badge: PART 5 OF 5 🏢
+notes: Final section opener! At Google we've made huge investments in Agents in the Enterprise — let's look at the Enterprise Agent Stack and why knowing these pieces matters for your career.
+
+<div class="section-divider act-5">
+  <span class="section-number-badge">Part 5 of 5</span>
+  <div class="section-divider-emoji">🏢</div>
+  <h1 class="section-divider-title">Agents in the Enterprise</h1>
+  <div class="section-divider-bar"></div>
+</div>
+
+---
+type: standard
+title: Google's Enterprise Agent Stack
+badge: ACT 5 • ENTERPRISE STACK 🏗️
+notes: Walk through Google's investment in Agents in the Enterprise (Gemini Enterprise Agent Platform). Point out the 3 horizontal build/scale layers (Experiences, Build & Orchestrate with ADK/Studio/A2A/MCP/Agent Runtime, and Models & Grounding with Gemini 4 & Model Garden) — AND highlight the critical vertical side pillar that real companies care most about: Governance, Security & Enablement (Agent Identity & IAM, Agent & Skill Registry, Agent Gateway & Model Armor, and Cost Optimization & Enablement).
+
+# 🏗️ Google's Enterprise Agent Stack
+### Built for Scale — Wrapped in Governance, Security & Enablement
+
+<div class="enterprise-stack-layout">
+  <div class="stack-layers">
+    <div class="stack-layer layer-exp">
+      <span class="stack-layer-label">1 • Experiences & Surfaces</span>
+      <h4>🖥️ Where Teams & Agents Work</h4>
+      <div class="stack-chips">
+        <span class="stack-chip">🚀 Antigravity</span>
+        <span class="stack-chip">💼 Gemini Enterprise</span>
+        <span class="stack-chip">🧩 Custom Apps</span>
+      </div>
+    </div>
+
+    <div class="stack-layer layer-build">
+      <span class="stack-layer-label">2 • Build, Scale & Orchestrate</span>
+      <h4>🛠️ Frameworks, Protocols & Runtime</h4>
+      <div class="stack-chips">
+        <span class="stack-chip">⚙️ ADK</span>
+        <span class="stack-chip">🎨 Agent Studio</span>
+        <span class="stack-chip">🔌 MCP & 🤝 A2A</span>
+        <span class="stack-chip">☁️ Agent Runtime & Memory</span>
+      </div>
+    </div>
+
+    <div class="stack-layer layer-models">
+      <span class="stack-layer-label">3 • Models & Enterprise Data</span>
+      <h4>🧠 Intelligence & Grounding</h4>
+      <div class="stack-chips">
+        <span class="stack-chip">✨ Gemini 4</span>
+        <span class="stack-chip">🌿 Model Garden (200+)</span>
+        <span class="stack-chip">🗄️ Enterprise Data</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack-governance-pillar">
+    <span class="pillar-badge">Cross-Cutting Control Plane</span>
+    <h4>🛡️ Governance, Security & Enablement</h4>
+    <ul>
+      <li>🪪 <strong>Agent Identity & IAM</strong></li>
+      <li>📋 <strong>Agent & Skill Registry</strong></li>
+      <li>🚧 <strong>Agent Gateway & Model Armor</strong></li>
+      <li>📊 <strong>Enablement & Cost Optimization</strong></li>
+    </ul>
+  </div>
+</div>
+
+---
+type: standard
+title: So What? Why This Matters for Your Career
+badge: ACT 5 • SO WHAT? 💼
+notes: Close the final section with the career takeaway from your notes! If you're a student, software engineer, or IT pro looking to join a company — or level up inside one — knowing how enterprises govern, secure, and enable agents (identity, gateways, registries, cost controls, ADK/MCP/A2A) sets you miles apart from people who only know how to type into a chatbot.
+
+# 💼 So What? Why Know This Stack?
+
+<div class="impact-grid">
+  <div class="impact-card impact-blue">
+    <div class="impact-emoji">💻</div>
+    <h4>Software Engineers</h4>
+    <ul>
+      <li>Build with ADK, MCP & A2A</li>
+      <li>Design for scale & tokenomics</li>
+    </ul>
+  </div>
+
+  <div class="impact-card impact-orange">
+    <div class="impact-emoji">🔐</div>
+    <h4>IT & Security Pros</h4>
+    <ul>
+      <li>Govern Agent Identity & IAM</li>
+      <li>Enforce Gateway & Model Armor</li>
+    </ul>
+  </div>
+
+  <div class="impact-card impact-yellow">
+    <div class="impact-emoji">🌟</div>
+    <h4>Your Career Edge</h4>
+    <ul>
+      <li>Enterprise AI needs guardrails</li>
+      <li>Knowing this stack stands out</li>
+    </ul>
+  </div>
+</div>
 
 ---
 type: standard

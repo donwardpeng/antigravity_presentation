@@ -2719,6 +2719,73 @@ pre[class*="language-"] {
    Bold & Vibrant Storyline Components (GDG DevFest 2026)
    ========================================================================== */
 
+/* 4-Act Section Title / Chapter Divider Slides */
+.section-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 440px;
+  margin: auto 0;
+  padding: 36px 24px;
+  gap: 20px;
+}
+
+.section-number-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 8px 22px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-divider.act-1 .section-number-badge { background: #007bff; color: #ffffff; }
+.section-divider.act-2 .section-number-badge { background: #ff6f00; color: #ffffff; }
+.section-divider.act-3 .section-number-badge { background: #ffd300; color: #0b1221; }
+.section-divider.act-4 .section-number-badge { background: #00a878; color: #ffffff; }
+.section-divider.act-5 .section-number-badge { background: linear-gradient(135deg, #007bff 0%, #ff6f00 100%); color: #ffffff; }
+
+.section-divider-emoji {
+  font-size: 3.6rem;
+  line-height: 1;
+}
+
+.slide-card h1.section-divider-title {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1.1px;
+  line-height: 1.15;
+  max-width: 820px;
+  margin: 0;
+}
+
+.section-divider-bar {
+  width: 96px;
+  height: 6px;
+  border-radius: 999px;
+}
+
+.section-divider.act-1 .section-divider-bar { background: #007bff; }
+.section-divider.act-2 .section-divider-bar { background: #ff6f00; }
+.section-divider.act-3 .section-divider-bar { background: #ffd300; }
+.section-divider.act-4 .section-divider-bar { background: #00a878; }
+.section-divider.act-5 .section-divider-bar { background: var(--brand-gradient); }
+
+@media (max-width: 768px) {
+  .slide-card h1.section-divider-title {
+    font-size: 2.3rem;
+  }
+}
+
 /* 4-Act Story Roadmap Grid */
 .story-roadmap-grid {
   display: grid;
@@ -2737,9 +2804,9 @@ pre[class*="language-"] {
   background: var(--bg-card);
   border: 1.5px solid var(--bg-card-border);
   border-radius: var(--radius-lg);
-  padding: 22px 24px;
+  padding: 24px 24px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
@@ -2754,6 +2821,11 @@ pre[class*="language-"] {
 .roadmap-card.act-2 { border-left: 6px solid #ff6f00; }
 .roadmap-card.act-3 { border-left: 6px solid #ffd300; }
 .roadmap-card.act-4 { border-left: 6px solid #00a878; }
+.roadmap-card.act-5 {
+  border-left: 6px solid #007bff;
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, rgba(0, 123, 255, 0.06) 0%, rgba(255, 111, 0, 0.06) 100%);
+}
 
 .roadmap-num {
   width: 44px;
@@ -2772,13 +2844,14 @@ pre[class*="language-"] {
 .act-2 .roadmap-num { background: #ff6f00; color: #ffffff; }
 .act-3 .roadmap-num { background: #ffd300; color: #0b1221; }
 .act-4 .roadmap-num { background: #00a878; color: #ffffff; }
+.act-5 .roadmap-num { background: linear-gradient(135deg, #007bff 0%, #ff6f00 100%); color: #ffffff; }
 
 .roadmap-body h4 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .roadmap-body p {
@@ -2844,9 +2917,10 @@ pre[class*="language-"] {
 
 .impact-card h4 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.32rem;
   font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: 4px;
 }
 
 .impact-card p {
@@ -2854,6 +2928,21 @@ pre[class*="language-"] {
   color: var(--text-secondary);
   margin-bottom: 0;
   line-height: 1.5;
+}
+
+.impact-card ul {
+  margin: 4px 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.impact-card li {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  line-height: 1.4;
 }
 
 /* Tokenomics Cadence Banner */
@@ -3057,6 +3146,138 @@ pre[class*="language-"] {
   margin-bottom: 0;
 }
 
+/* Enterprise Agent Stack Diagram (Part 5) */
+.enterprise-stack-layout {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: 18px;
+  margin: 16px 0 10px 0;
+  align-items: stretch;
+}
+
+@media (max-width: 880px) {
+  .enterprise-stack-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stack-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stack-layer {
+  background: var(--bg-card);
+  border: 1.5px solid var(--bg-card-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stack-layer:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stack-layer.layer-exp { border-left: 6px solid #007bff; }
+.stack-layer.layer-build { border-left: 6px solid #ff6f00; }
+.stack-layer.layer-models { border-left: 6px solid #00a878; }
+
+.stack-layer-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--vibrant-blue-text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.layer-build .stack-layer-label { color: var(--vibrant-orange-text); }
+.layer-models .stack-layer-label { color: var(--vibrant-mint); }
+
+.stack-layer h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stack-chip {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-card-border);
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+
+.stack-governance-pillar {
+  background: linear-gradient(180deg, rgba(255, 211, 0, 0.2) 0%, rgba(255, 111, 0, 0.08) 100%);
+  border: 2px solid #ffd300;
+  border-radius: var(--radius-lg);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-md);
+}
+
+.dark-mode .stack-governance-pillar {
+  background: linear-gradient(180deg, rgba(255, 211, 0, 0.14) 0%, rgba(255, 111, 0, 0.1) 100%);
+}
+
+.pillar-badge {
+  align-self: flex-start;
+  background: var(--vibrant-yellow);
+  color: var(--vibrant-yellow-ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.stack-governance-pillar h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.stack-governance-pillar ul {
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stack-governance-pillar li {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0;
+  line-height: 1.35;
+}
+
 /* Legacy scrollbar fallback for older WebKit/Blink engines */
 @supports not (scrollbar-color: auto) {
   .slide-card::-webkit-scrollbar,
@@ -3082,6 +3303,8 @@ pre[class*="language-"] {
   .impact-card,
   .transfer-card,
   .pricing-card,
+  .stack-layer,
+  .stack-governance-pillar,
   .triad-card,
   .react-card,
   .surface-card,
