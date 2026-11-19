@@ -1,6 +1,6 @@
 # GDG Cloud Modular Presentation Application
 
-A containerized, interactive presentation web platform designed for GDG on Campus University of Windsor tech talks. Built for lightweight local development and zero-friction deployment to **Google Cloud Run**.
+A containerized, interactive presentation web platform designed for GDG Windsor DevFest 2026. Built for lightweight local development and zero-friction deployment to **Google Cloud Run**.
 
 ---
 
@@ -48,7 +48,7 @@ badge: FEATURED SPEAKERS
 notes: Welcome our keynote speakers!
 
 # Meet the Speakers
-### GDG on Campus University of Windsor
+### GDG Windsor DevFest 2026
 
 ```speakers
 [
