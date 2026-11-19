@@ -19,6 +19,7 @@ const activeSlide = document.getElementById('activeSlide');
 const currentSlideIndexEl = document.getElementById('currentSlideIndex');
 const totalSlidesCountEl = document.getElementById('totalSlidesCount');
 const slideBadge = document.getElementById('slideBadge');
+const slideProgressBar = document.getElementById('slideProgressBar');
 
 // Toolbar & Nav Buttons
 const prevBtn = document.getElementById('prevBtn');
@@ -98,6 +99,10 @@ function renderSlide(index) {
 
   currentSlideIndexEl.textContent = currentIndex + 1;
   slideBadge.textContent = slide.badge || 'PRESENTATION';
+  if (slideProgressBar && slides.length > 0) {
+    const progressPct = ((currentIndex + 1) / slides.length) * 100;
+    slideProgressBar.style.width = `${progressPct}%`;
+  }
 
   // Render markdown content using Marked.js
   let htmlContent = marked.parse(slide.content);
@@ -115,8 +120,8 @@ function renderSlide(index) {
     ` + htmlContent;
   }
 
-  // If introduction slide, append speaker spots grid
-  if (['introduction', 'speakers', 'speaker-intro'].includes(slide.type)) {
+  // If introduction slide or slide defines speakers, append speaker spots grid
+  if (['introduction', 'speakers', 'speaker-intro'].includes(slide.type) || (slide.speakers && slide.speakers.length > 0)) {
     if (!htmlContent.includes('<h1')) {
       htmlContent = `<h1 class="intro-slide-title">${escapeHTML(slide.title)}</h1>` + htmlContent;
     }
@@ -142,7 +147,7 @@ function renderSlide(index) {
           <span class="slide-footer-text">${escapeHTML(slide.footer)}</span>
         </div>
         <div class="slide-footer-meta">
-          <span>GDG on Campus</span>
+          <span>DevFest 2026</span>
         </div>
       </footer>
     `;
@@ -517,6 +522,8 @@ function setupEventListeners() {
   // Theme Toggle
   themeToggleBtn.addEventListener('click', () => {
     isDarkTheme = !isDarkTheme;
+    document.documentElement.classList.toggle('light-mode', !isDarkTheme);
+    document.documentElement.classList.toggle('dark-mode', isDarkTheme);
     document.body.classList.toggle('light-mode', !isDarkTheme);
     document.body.classList.toggle('dark-mode', isDarkTheme);
     const themeIcon = document.getElementById('themeIcon');
